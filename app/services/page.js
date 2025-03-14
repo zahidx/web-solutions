@@ -52,19 +52,19 @@ const projects = [
     title: "Innovative Portfolio",
     description:
       "A dynamic showcase of our latest design and development projects, featuring interactive demos and cutting-edge tech.",
-    imageUrl: "/images/project1.jpg",
+    imageUrl: "/b1.png",
   },
   {
     title: "E-Commerce Revolution",
     description:
       "A comprehensive online store that blends stunning design with powerful backend technology for a seamless shopping experience.",
-    imageUrl: "/images/project2.jpg",
+    imageUrl: "/b2.png",
   },
   {
     title: "SEO Mastery",
     description:
       "A project highlighting our SEO strategies in action—optimizing content, driving organic traffic, and increasing conversions.",
-    imageUrl: "/images/project3.jpg",
+    imageUrl: "/b3.png",
   },
 ];
 
@@ -74,21 +74,21 @@ const testimonials = [
     role: "CEO, Tech Innovators",
     feedback:
       "Their innovative design and seamless development process transformed our digital presence. Highly recommended!",
-    avatar: "/images/avatar1.jpg",
+    avatar: "/profile.png",
   },
   {
     name: "John Smith",
     role: "Marketing Director, BrandBoost",
     feedback:
       "The SEO and digital solutions provided were exceptional. Our traffic and conversions have never been higher.",
-    avatar: "/images/avatar2.jpg",
+      avatar: "/profile.png",
   },
   {
     name: "Sara Lee",
     role: "Founder, E-Com Hub",
     feedback:
       "A reliable partner in bringing our online store vision to life with excellent support and technical expertise.",
-    avatar: "/images/avatar3.jpg",
+      avatar: "/profile.png",
   },
 ];
 
