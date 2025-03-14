@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import {
   FaLaptopCode,
   FaSearch,
@@ -16,6 +17,7 @@ const services = [
       "We craft responsive, user-friendly websites using Figma, Adobe XD, and Webflow. Our tech stack includes HTML5, CSS3, JavaScript, React, and Node.js.",
     icon: <FaLaptopCode className="text-6xl text-blue-500" />,
     cta: "Get a Custom Design",
+    link: "/custom",  // Add the link property to the service
   },
   {
     title: "SEO Services",
@@ -23,6 +25,7 @@ const services = [
       "Boost your rankings with On-Page & Off-Page SEO, Content Optimization, and in-depth analytics using Google Analytics, SEMrush, and Ahrefs.",
     icon: <FaSearch className="text-6xl text-green-500" />,
     cta: "Boost Your Rankings",
+    link: "/seo",  
   },
   {
     title: "CMS Solutions (WordPress & Custom CMS)",
@@ -30,6 +33,7 @@ const services = [
       "Leverage WordPress for easy management or get a custom CMS tailored to your unique needs for maximum flexibility.",
     icon: <FaWordpress className="text-6xl text-purple-500" />,
     cta: "Start Your CMS Project",
+    link: "/cms", 
   },
   {
     title: "E-Commerce Solutions",
@@ -37,6 +41,8 @@ const services = [
       "Create powerful online stores with Shopify, WooCommerce, and Magento, featuring secure payments and inventory management.",
     icon: <FaShoppingCart className="text-6xl text-yellow-500" />,
     cta: "Launch Your Store Today",
+    link: "/ecommerce",
+    
   },
   {
     title: "Custom Development",
@@ -44,6 +50,7 @@ const services = [
       "Build scalable solutions like CRM systems, business applications, and database integrations, tailored to your business needs.",
     icon: <FaCogs className="text-6xl text-red-500" />,
     cta: "Build Your Custom Solution",
+    link: "/custom-web",
   },
 ];
 
@@ -117,8 +124,8 @@ export default function AdvancedLightPage() {
         </motion.p>
       </section>
 
-      {/* Services Section */}
-      <section className="py-16 px-6">
+         {/* Services Section */}
+         <section className="py-16 px-6">
         <div className="max-w-7xl mx-auto text-center mb-12">
           <h2 className="text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-indigo-500">
             Our Services
@@ -146,9 +153,11 @@ export default function AdvancedLightPage() {
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-100">{service.title}</h3>
               <p className="text-gray-700 dark:text-gray-300 mb-6">{service.description}</p>
-              <button className="mt-4 bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white px-8 py-3 rounded-full font-medium transition">
-                {service.cta}
-              </button>
+              <Link href={service.link || "#"}> {/* Add Link component here */}
+                <button className="mt-4 bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white px-8 py-3 rounded-full font-medium transition">
+                  {service.cta}
+                </button>
+              </Link>
             </motion.div>
           ))}
         </div>
