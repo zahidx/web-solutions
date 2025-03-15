@@ -37,10 +37,10 @@ const Footer = () => {
         >
           <h4 className="text-white font-semibold">Quick Links</h4>
           <div className="flex flex-col space-y-2">
-            {["Home", "Services", "Portfolio", "Case Studies", "Blog", "Careers"].map((link) => (
+            {["Home", "Services", "Portfolio", "Case Studies", "Blog", "FAQ"].map((link) => (
               <a
                 key={link}
-                href="/"
+                href="/faq"
                 className="text-gray-400 hover:text-white transition-all duration-300 transform hover:scale-105"
               >
                 {link}
