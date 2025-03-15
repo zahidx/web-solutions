@@ -36,11 +36,25 @@ const HeroSection = () => {
             scale: 1.03,  // Slightly scale up on hover for a subtle effect
             transition: { duration: 0.2, ease: "easeInOut" },
           }}
-          className="inline-flex items-center gap-1 px-2 py-2 bg-gradient-to-r from-[#FF6A00] to-[#FF6A00] text-black text-2xl font-semibold rounded-md shadow-lg transform transition-all duration-300 ease-in-out"
+          className="inline-flex items-center gap-1 px-4 py-2 bg-gradient-to-r from-[#FF6A00] to-[#FF6A00] text-black text-2xl font-semibold rounded-md shadow-lg transform transition-all duration-300 ease-in-out"
         >
           Get Started <ArrowRight size={22} />
         </motion.a>
       </div>
+
+
+
+       {/* Scroll Indicator */}
+       <motion.div
+        className="absolute bottom-6 w-full text-center text-white dark:text-gray-200"
+        animate={{ opacity: [0, 1, 0] }}
+        transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <p className="text-xl text-gray-900 dark:text-blue-500">Scroll Down</p>
+        <div className="w-6 h-6 border-t-4 mt-2 border-gray-900 dark:border-gray-200 rounded-full mx-auto animate-bounce"></div>
+      </motion.div>
+
+
     </section>
   );
 };
