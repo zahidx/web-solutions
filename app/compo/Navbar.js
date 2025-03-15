@@ -8,6 +8,7 @@ import {
   X,
   ChevronDown,
   Info,
+  Workflow,
   Edit,
   Home,
   Briefcase,
@@ -169,6 +170,20 @@ const Navbar = () => {
                     <Edit size={16} className="mr-2 inline" />
                     Blog
                   </a>
+
+
+                  <a
+                    className="block p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded transition-all flex items-center"
+                    href="/process"
+                  >
+  <Workflow size={16} className="mr-2 inline" />
+  Process
+</a>
+
+
+
+
+
                   <a
                     className="block p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded transition-all flex items-center"
                     href="/about"
@@ -178,13 +193,6 @@ const Navbar = () => {
                   </a>
 
 
-                  <a
-                    className="block p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded transition-all flex items-center"
-                    href="/process"
-                  >
-                    <Info size={16} className="mr-2 inline" />
-                    Process
-                  </a>
 
 
 
