@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { FaClipboard, FaPaintBrush, FaRocket } from "react-icons/fa";
 import { FaUserCheck, FaSearch, FaClock } from "react-icons/fa";
-
+import { FaBullseye, FaLightbulb } from 'react-icons/fa';
 export default function About() {
   return (
     <div className="min-h-screen bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-white transition-colors duration-700 mt-16">
@@ -32,26 +32,29 @@ export default function About() {
         </section>
 
         {/* Mission & Vision Section */}
-        <section className="flex flex-col md:flex-row justify-between items-center gap-10 mb-16 sm:mb-20">
-          <div className="flex-1 px-4">
-            <h3 className="text-2xl sm:text-3xl font-semibold text-yellow-500 mb-3">
-              My Mission
-            </h3>
-            <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300">
-              My mission is to deliver cutting-edge web solutions that transform the digital presence of my clients,
-              focusing on quality, creativity, and efficiency.
-            </p>
-          </div>
-          <div className="flex-1 px-4">
-            <h3 className="text-2xl sm:text-3xl font-semibold text-yellow-500 mb-3">
-              My Vision
-            </h3>
-            <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300">
-              I envision becoming a leading provider of custom digital solutions by embracing innovation and excellence
-              in everything I do.
-            </p>
-          </div>
-        </section>
+<section className="flex flex-col md:flex-row justify-between items-center gap-10 mb-16 sm:mb-20">
+  <div className="flex-1 px-4">
+    <div className="flex items-center gap-2">
+      <FaBullseye className="w-6 h-6 text-yellow-500" />
+      <h3 className="text-2xl sm:text-3xl font-semibold text-yellow-500 mb-3">My Mission</h3>
+    </div>
+    <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300">
+      My mission is to deliver cutting-edge web solutions that transform the digital presence of my clients,
+      focusing on quality, creativity, and efficiency.
+    </p>
+  </div>
+  <div className="flex-1 px-4">
+    <div className="flex items-center gap-2">
+      <FaLightbulb className="w-6 h-6 text-yellow-500" />
+      <h3 className="text-2xl sm:text-3xl font-semibold text-yellow-500 mb-3">My Vision</h3>
+    </div>
+    <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300">
+      I envision becoming a leading provider of custom digital solutions by embracing innovation and excellence
+      in everything I do.
+    </p>
+  </div>
+</section>
+
 
         {/* Approach Section */}
         <section className="bg-white dark:bg-gray-700 py-12 sm:py-16 px-6 sm:px-10 rounded-2xl shadow-2xl mb-16 transform hover:shadow-3xl transition-all duration-500">
