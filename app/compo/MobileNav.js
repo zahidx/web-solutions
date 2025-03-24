@@ -13,6 +13,16 @@ const navItems = [
   { href: "/about", label: "About Us", icon: Info },
 ];
 
+// Define different colors for icons in dark mode
+const darkIconColors = [
+  "text-blue-400",   // Home
+  "text-green-400",  // Services
+  "text-purple-400", // Portfolio
+  "text-red-400",    // Contact
+  "text-yellow-400", // Blog
+  "text-teal-400",   // About Us
+];
+
 const MobileNav = ({ setMenuOpen }) => {
   const menuRef = useRef(null);
 
@@ -61,7 +71,12 @@ const MobileNav = ({ setMenuOpen }) => {
                        hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-orange-400 border border-transparent 
                        dark:border-gray-700 shadow-md dark:shadow-lg"
           >
-            <Icon size={22} className="text-current" />
+            <Icon
+              size={22}
+              className={`${
+                darkIconColors[index] // Use the index to select the color
+              } text-current`}
+            />
             {label}
           </motion.a>
         ))}
