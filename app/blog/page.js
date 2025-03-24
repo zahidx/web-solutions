@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search } from "lucide-react";
+import Image from "next/image";
 
 const blogPosts = [
   {
@@ -152,11 +153,12 @@ export default function BlogPage() {
                 whileHover={{ scale: 1.03 }}
                 exit={{ opacity: 0, y: 50 }}
               >
-                <div className="relative">
-                  <img
+                <div className="relative w-full h-56">
+                  <Image
                     src={post.image}
                     alt={post.title}
-                    className="w-full h-56 object-cover"
+                    fill
+                    className="object-cover"
                   />
                   {/* Animated overlay on hover */}
                   <motion.div

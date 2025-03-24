@@ -87,7 +87,7 @@ export default function SEOServicesPage() {
             📊 Measurable Results
           </h2>
           <p className="text-gray-300">
-            We focus on delivering tangible results for your website. With our tailored SEO strategies, we've helped businesses achieve:
+            We focus on delivering tangible results for your website. With our tailored SEO strategies, we&apos;ve helped businesses achieve:
           </p>
           <ul className="list-disc list-inside text-gray-300 mt-4">
             <li>Increased organic traffic by up to 300%</li>

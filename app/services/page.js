@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import {
   FaLaptopCode,
   FaSearch,
@@ -17,7 +18,7 @@ const services = [
       "We craft responsive, user-friendly websites using Figma, Adobe XD, and Webflow. Our tech stack includes HTML5, CSS3, JavaScript, React, and Node.js.",
     icon: <FaLaptopCode className="text-6xl text-blue-500" />,
     cta: "Get a Custom Design",
-    link: "/custom",  // Add the link property to the service
+    link: "/custom",
   },
   {
     title: "SEO Services",
@@ -25,7 +26,7 @@ const services = [
       "Boost your rankings with On-Page & Off-Page SEO, Content Optimization, and in-depth analytics using Google Analytics, SEMrush, and Ahrefs.",
     icon: <FaSearch className="text-6xl text-green-500" />,
     cta: "Boost Your Rankings",
-    link: "/seo",  
+    link: "/seo",
   },
   {
     title: "CMS Solutions (WordPress & Custom CMS)",
@@ -33,7 +34,7 @@ const services = [
       "Leverage WordPress for easy management or get a custom CMS tailored to your unique needs for maximum flexibility.",
     icon: <FaWordpress className="text-6xl text-purple-500" />,
     cta: "Start Your CMS Project",
-    link: "/cms", 
+    link: "/cms",
   },
   {
     title: "E-Commerce Solutions",
@@ -42,7 +43,6 @@ const services = [
     icon: <FaShoppingCart className="text-6xl text-yellow-500" />,
     cta: "Launch Your Store Today",
     link: "/ecommerce",
-    
   },
   {
     title: "Custom Development",
@@ -88,14 +88,14 @@ const testimonials = [
     role: "Marketing Director, BrandBoost",
     feedback:
       "The SEO and digital solutions provided were exceptional. Our traffic and conversions have never been higher.",
-      avatar: "/profile.png",
+    avatar: "/profile.png",
   },
   {
     name: "Sara Lee",
     role: "Founder, E-Com Hub",
     feedback:
       "A reliable partner in bringing our online store vision to life with excellent support and technical expertise.",
-      avatar: "/profile.png",
+    avatar: "/profile.png",
   },
 ];
 
@@ -124,8 +124,8 @@ export default function AdvancedLightPage() {
         </motion.p>
       </section>
 
-         {/* Services Section */}
-         <section className="py-16 px-6">
+      {/* Services Section */}
+      <section className="py-16 px-6">
         <div className="max-w-7xl mx-auto text-center mb-12">
           <h2 className="text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-indigo-500">
             Our Services
@@ -153,7 +153,7 @@ export default function AdvancedLightPage() {
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-100">{service.title}</h3>
               <p className="text-gray-700 dark:text-gray-300 mb-6">{service.description}</p>
-              <Link href={service.link || "#"}> {/* Add Link component here */}
+              <Link href={service.link || "#"}>
                 <button className="mt-4 bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white px-8 py-3 rounded-full font-medium transition">
                   {service.cta}
                 </button>
@@ -183,13 +183,18 @@ export default function AdvancedLightPage() {
               transition={{ duration: 0.6, delay: index * 0.2 }}
               className="rounded-2xl overflow-hidden shadow-xl transform hover:scale-105 transition"
             >
-              <img
-                src={project.imageUrl}
-                alt={project.title}
-                className="w-full h-56 object-cover"
-              />
+              <div className="relative w-full h-56">
+                <Image
+                  src={project.imageUrl}
+                  alt={project.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
               <div className="p-6 bg-white dark:bg-[#1F2937]">
-                <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-gray-100">{project.title}</h3>
+                <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-gray-100">
+                  {project.title}
+                </h3>
                 <p className="text-gray-700 dark:text-gray-300">{project.description}</p>
               </div>
             </motion.div>
@@ -217,31 +222,22 @@ export default function AdvancedLightPage() {
               transition={{ duration: 0.5, delay: index * 0.2 }}
               className="bg-white dark:bg-[#1F2937] rounded-2xl p-6 text-center shadow-md"
             >
-              <img
-                src={test.avatar}
-                alt={test.name}
-                className="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-gray-300"
-              />
-              <p className="text-gray-700 dark:text-gray-300 italic mb-4">"{test.feedback}"</p>
-              <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100">{test.name}</h4>
-              <span className="text-sm text-gray-500 dark:text-gray-400">{test.role}</span>
+              <div className="relative w-16 h-16 mx-auto mb-4 border-2 border-gray-300 rounded-full overflow-hidden">
+                <Image
+                  src={test.avatar}
+                  alt={test.name}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <p className="text-gray-700 dark:text-gray-300 italic mb-4">
+  &quot;{test.feedback}&quot;
+</p>
+
+              <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-100">{test.name}</h4>
+              <p className="text-sm text-gray-600 dark:text-gray-400">{test.role}</p>
             </motion.div>
           ))}
-        </div>
-      </section>
-
-      {/* Final Call-to-Action Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-indigo-500 to-blue-500 dark:from-[#1E2A47] dark:to-[#1E3C5A]">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-5xl font-extrabold mb-6 text-white">
-            Ready to Transform Your Digital Presence?
-          </h2>
-          <p className="text-xl text-gray-100 mb-8">
-            Connect with us today and let our expert team elevate your business to new heights.
-          </p>
-          <button className="bg-white text-indigo-600 px-10 py-4 rounded-full font-bold text-xl shadow-lg hover:shadow-2xl transition">
-            Contact Us Now
-          </button>
         </div>
       </section>
     </div>

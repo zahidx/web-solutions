@@ -12,7 +12,7 @@ export default function ContactExtras() {
       {/* CTA Section */}
       <motion.div className="bg-blue-600 text-white text-center py-12 rounded-3xl shadow-lg" variants={itemVariants}>
         <h2 className="text-3xl font-bold mb-4">Ready to Work With Us?</h2>
-        <p className="text-lg mb-6">Get in touch today and let's bring your ideas to life.</p>
+        <p className="text-lg mb-6">Get in touch today and let&apos;s bring your ideas to life.</p>
         <a href="/contact" className="bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg hover:bg-gray-200 transition">
           Contact Us
         </a>

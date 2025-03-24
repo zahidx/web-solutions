@@ -194,7 +194,7 @@ export default function ProcessPage() {
                   whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
                 >
                   <p className="text-gray-300 italic">
-                    “Exceptional service from start to finish. They delivered on time, with great results, and we're extremely happy with the outcome.”
+                    “Exceptional service from start to finish. They delivered on time, with great results, and we&apos;re extremely happy with the outcome.”
                   </p>
                   <div className="mt-4 flex items-center gap-3">
                     <CheckCircle className="text-green-400" />
@@ -204,13 +204,13 @@ export default function ProcessPage() {
                   </div>
                 </motion.div>
 
-                {/* Testimonial 4 */}
+                {/* Duplicate Testimonial */}
                 <motion.div
                   className="bg-[#1E293B] p-6 rounded-xl border border-gray-700 shadow-2xl"
                   whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
                 >
                   <p className="text-gray-300 italic">
-                    “Exceptional service from start to finish. They delivered on time, with great results, and we're extremely happy with the outcome.”
+                    “Exceptional service from start to finish. They delivered on time, with great results, and we&apos;re extremely happy with the outcome.”
                   </p>
                   <div className="mt-4 flex items-center gap-3">
                     <CheckCircle className="text-green-400" />
@@ -220,14 +220,13 @@ export default function ProcessPage() {
                   </div>
                 </motion.div>
 
-
-                {/* Testimonial 4 */}
+                {/* Duplicate Testimonial */}
                 <motion.div
                   className="bg-[#1E293B] p-6 rounded-xl border border-gray-700 shadow-2xl"
                   whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
                 >
                   <p className="text-gray-300 italic">
-                    “Exceptional service from start to finish. They delivered on time, with great results, and we're extremely happy with the outcome.”
+                    “Exceptional service from start to finish. They delivered on time, with great results, and we&apos;re extremely happy with the outcome.”
                   </p>
                   <div className="mt-4 flex items-center gap-3">
                     <CheckCircle className="text-green-400" />
@@ -237,15 +236,13 @@ export default function ProcessPage() {
                   </div>
                 </motion.div>
 
-
-
-                {/* Testimonial 4 */}
+                {/* Duplicate Testimonial */}
                 <motion.div
                   className="bg-[#1E293B] p-6 rounded-xl border border-gray-700 shadow-2xl"
                   whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
                 >
                   <p className="text-gray-300 italic">
-                    “Exceptional service from start to finish. They delivered on time, with great results, and we're extremely happy with the outcome.”
+                    “Exceptional service from start to finish. They delivered on time, with great results, and we&apos;re extremely happy with the outcome.”
                   </p>
                   <div className="mt-4 flex items-center gap-3">
                     <CheckCircle className="text-green-400" />
@@ -254,14 +251,6 @@ export default function ProcessPage() {
                     </span>
                   </div>
                 </motion.div>
-
-
-
-
-
-
-
-
               </div>
             </motion.section>
 
@@ -274,7 +263,7 @@ export default function ProcessPage() {
             >
               <a href="/contact">
                 <span className="inline-block bg-blue-500 text-white px-10 py-4 rounded-lg text-lg font-semibold hover:bg-blue-400 transition shadow-xl">
-                  🚀 Let’s Work Together
+                  🚀 Let&apos;s Work Together
                 </span>
               </a>
             </motion.div>

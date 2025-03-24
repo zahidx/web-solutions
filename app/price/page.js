@@ -1,4 +1,5 @@
-"use client";
+'use client';
+
 import { useState } from "react";
 import { FaCheck, FaTimes } from "react-icons/fa";
 
@@ -25,7 +26,7 @@ const pricingPlans = [
     name: "Standard",
     price: "$999",
     features: [
-      "Everything in Basic Plan +",
+      "Everything in Basic Plan",
       "Up to 10 Pages",
       "Custom CMS or WordPress Setup",
       "Advanced SEO Optimization",
@@ -40,7 +41,7 @@ const pricingPlans = [
     name: "Premium",
     price: "$1,999",
     features: [
-      "Everything in Standard Plan +",
+      "Everything in Standard Plan",
       "Unlimited Pages",
       "Full E-Commerce Setup",
       "Premium SEO Strategy",
@@ -73,8 +74,12 @@ export default function PricingPage() {
       <div className="max-w-4xl mx-auto text-center">
         <h1 className="text-4xl font-bold mb-4">Flexible Pricing for Every Business Need</h1>
         <p className="text-gray-400">
-          We offer flexible pricing plans designed to suit businesses of all sizes. Whether you're starting small or
-          need an advanced solution, we have the right package for you.
+        <p className="text-gray-400">
+  We offer flexible pricing plans designed to suit businesses of all sizes. Whether you&#39;re starting small or
+  need an advanced solution, we have the right package for you.
+</p>
+
+
         </p>
       </div>
 

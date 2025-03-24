@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function EcommercePage() {
   return (
@@ -45,7 +46,7 @@ export default function EcommercePage() {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
-              <img src="https://via.placeholder.com/400x250" alt="Shopify Platform" className="w-full h-48 object-cover rounded-lg" />
+              <Image src="https://via.placeholder.com/400x250" alt="Shopify Platform" width={400} height={250} className="w-full h-48 object-cover rounded-lg" />
               <h3 className="text-xl font-semibold text-yellow-300 mt-4">Shopify</h3>
               <p className="text-gray-400 mt-2">
                 Shopify is a powerful, all-in-one e-commerce platform that allows you to create, manage, and scale your store effortlessly. Perfect for entrepreneurs and businesses of all sizes.
@@ -58,10 +59,10 @@ export default function EcommercePage() {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
-              <img src="https://via.placeholder.com/400x250" alt="WooCommerce Platform" className="w-full h-48 object-cover rounded-lg" />
+              <Image src="https://via.placeholder.com/400x250" alt="WooCommerce Platform" width={400} height={250} className="w-full h-48 object-cover rounded-lg" />
               <h3 className="text-xl font-semibold text-yellow-300 mt-4">WooCommerce</h3>
               <p className="text-gray-400 mt-2">
-                WooCommerce is an open-source WordPress plugin that transforms your website into a fully functioning e-commerce store. It's highly customizable, ideal for businesses with specific needs.
+                WooCommerce is an open-source WordPress plugin that transforms your website into a fully functioning e-commerce store. It&apos;s highly customizable, ideal for businesses with specific needs.
               </p>
             </motion.div>
 
@@ -71,7 +72,7 @@ export default function EcommercePage() {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
-              <img src="https://via.placeholder.com/400x250" alt="Magento Platform" className="w-full h-48 object-cover rounded-lg" />
+              <Image src="https://via.placeholder.com/400x250" alt="Magento Platform" width={400} height={250} className="w-full h-48 object-cover rounded-lg" />
               <h3 className="text-xl font-semibold text-yellow-300 mt-4">Magento</h3>
               <p className="text-gray-400 mt-2">
                 Magento is a robust, enterprise-level platform that offers advanced features, scalability, and flexibility. Ideal for businesses with high-volume sales and complex requirements.

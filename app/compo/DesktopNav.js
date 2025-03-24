@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import {
   Home,
   Briefcase,
@@ -28,20 +29,20 @@ const DesktopNav = ({
 }) => {
   return (
     <div className="hidden md:flex space-x-8 items-center text-lg">
-      <a
+      <Link
         className="hover:text-orange-400 transition-all duration-300 text-gray-900 dark:text-gray-100 flex items-center"
         href="/"
       >
         <Home size={16} className="mr-2 inline" />
         Home
-      </a>
-      <a
+      </Link>
+      <Link
         className="hover:text-orange-400 transition-all duration-300 text-gray-900 dark:text-gray-100 flex items-center"
         href="/services"
       >
         <Briefcase size={16} className="mr-2 inline" />
         Services
-      </a>
+      </Link>
 
       {/* Portfolio Dropdown */}
       <div className="relative group">
@@ -64,27 +65,27 @@ const DesktopNav = ({
                 darkMode ? "text-white" : "text-black"
               }`}
             >
-              <a
+              <Link
                 className="block p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded transition-all flex items-center"
                 href="/portfolio1"
               >
                 <Monitor size={16} className="mr-2 inline" />
                 Web Design
-              </a>
-              <a
+              </Link>
+              <Link
                 className="block p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded transition-all flex items-center"
                 href="/portfolio2"
               >
-                <Image size={16} className="mr-2 inline" />
+                <Image size={16} className="mr-2 inline" alt="" /> {/* Added alt="" here */}
                 UI/UX Projects
-              </a>
-              <a
+              </Link>
+              <Link
                 className="block p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded transition-all flex items-center"
                 href="/portfolio3"
               >
                 <Smartphone size={16} className="mr-2 inline" />
                 Mobile Apps
-              </a>
+              </Link>
             </motion.div>
           )}
         </AnimatePresence>
@@ -111,41 +112,41 @@ const DesktopNav = ({
                 darkMode ? "text-white" : "text-black"
               }`}
             >
-              <a
+              <Link
                 className="block p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded transition-all flex items-center"
                 href="/blog"
               >
                 <Edit size={16} className="mr-2 inline" />
                 Blog
-              </a>
+              </Link>
 
-              <a
+              <Link
                 className="block p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded transition-all flex items-center"
                 href="/process"
               >
                 <Workflow size={16} className="mr-2 inline" />
                 Process
-              </a>
+              </Link>
 
-              <a
+              <Link
                 className="block p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded transition-all flex items-center"
                 href="/about"
               >
                 <Info size={16} className="mr-2 inline" />
                 About Us
-              </a>
+              </Link>
             </motion.div>
           )}
         </AnimatePresence>
       </div>
 
-      <a
+      <Link
         className="hover:text-orange-400 transition-all duration-300 text-gray-900 dark:text-gray-100 flex items-center"
         href="/contact"
       >
         <Phone size={16} className="mr-2 inline" />
         Contact
-      </a>
+      </Link>
 
       {/* Dark Mode Toggle */}
       <button

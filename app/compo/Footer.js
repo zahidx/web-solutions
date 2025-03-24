@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { Facebook, Twitter, Instagram, Linkedin, Send } from "lucide-react";
 
 const Footer = () => {
@@ -38,13 +39,9 @@ const Footer = () => {
           <h4 className="text-white font-semibold">Quick Links</h4>
           <div className="flex flex-col space-y-2">
             {["Home", "Services", "Portfolio", "Case Studies", "Blog", "FAQ"].map((link) => (
-              <a
-                key={link}
-                href="/faq"
-                className="text-gray-400 hover:text-white transition-all duration-300 transform hover:scale-105"
-              >
+              <Link key={link} href={`/${link.toLowerCase().replace(" ", "-")}`} className="text-gray-400 hover:text-white transition-all duration-300 transform hover:scale-105">
                 {link}
-              </a>
+              </Link>
             ))}
           </div>
         </motion.div>
@@ -60,13 +57,9 @@ const Footer = () => {
           <div className="flex flex-col space-y-2">
             {["Help Center", "Contact Us", "Privacy Policy", "Terms of Service", "Security"].map(
               (link) => (
-                <a
-                  key={link}
-                  href="/"
-                  className="text-gray-400 hover:text-white transition-all duration-300 transform hover:scale-105"
-                >
+                <Link key={link} href={`/${link.toLowerCase().replace(" ", "-")}`} className="text-gray-400 hover:text-white transition-all duration-300 transform hover:scale-105">
                   {link}
-                </a>
+                </Link>
               )
             )}
           </div>
@@ -123,9 +116,7 @@ const Footer = () => {
       >
         <p>
           &copy; {new Date().getFullYear()} ZahidWebSolution. All Rights Reserved. |{" "}
-          <a href="/privacy" className="text-blue-400 hover:text-blue-300 transition-all">
-            Privacy Policy
-          </a>
+          <Link href="/privacy" className="text-blue-400 hover:text-blue-300 transition-all">Privacy Policy</Link>
         </p>
       </motion.div>
     </motion.footer>

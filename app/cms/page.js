@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function CMSPage() {
   return (
@@ -16,7 +17,7 @@ export default function CMSPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          CMS Solutions (WordPress & Custom CMS)
+          CMS Solutions (WordPress &amp; Custom CMS)
         </motion.h1>
 
         {/* Intro Section */}
@@ -26,7 +27,7 @@ export default function CMSPage() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.3 }}
         >
-          We specialize in building scalable, user-friendly CMS websites. Whether you need the versatility of WordPress or a custom CMS built to your unique needs, we've got you covered.
+          We specialize in building scalable, user-friendly CMS websites. Whether you need the versatility of WordPress or a custom CMS built to your unique needs, we&apos;ve got you covered.
         </motion.p>
 
         {/* WordPress CMS Advantages */}
@@ -38,9 +39,15 @@ export default function CMSPage() {
             WordPress is one of the most popular CMS platforms due to its ease of use, flexibility, and extensive plugin ecosystem. Here are some key benefits:
           </p>
           <ul className="list-disc list-inside text-gray-300">
-            <li><strong>Easy to Manage:</strong> WordPress provides a user-friendly interface, making it simple for non-technical users to manage their content.</li>
-            <li><strong>Plugins:</strong> With thousands of plugins available, you can easily extend the functionality of your website—whether it's adding SEO tools, social media integrations, or e-commerce capabilities.</li>
-            <li><strong>SEO-Friendly:</strong> WordPress is built with SEO in mind, with built-in tools and plugins that help you optimize your site for search engines.</li>
+            <li>
+              <strong>Easy to Manage:</strong> WordPress provides a user-friendly interface, making it simple for non-technical users to manage their content.
+            </li>
+            <li>
+              <strong>Plugins:</strong> With thousands of plugins available, you can easily extend the functionality of your website—whether it&apos;s adding SEO tools, social media integrations, or e-commerce capabilities.
+            </li>
+            <li>
+              <strong>SEO-Friendly:</strong> WordPress is built with SEO in mind, with built-in tools and plugins that help you optimize your site for search engines.
+            </li>
           </ul>
         </section>
 
@@ -50,22 +57,28 @@ export default function CMSPage() {
             ⚙️ Custom CMS Solutions
           </h2>
           <p className="text-gray-300 mb-4">
-            A custom CMS allows for greater flexibility, providing a tailored solution to your unique business needs. Here’s why you might choose a custom CMS:
+            A custom CMS allows for greater flexibility, providing a tailored solution to your unique business needs. Here&apos;s why you might choose a custom CMS:
           </p>
           <ul className="list-disc list-inside text-gray-300">
-            <li><strong>Tailored to Your Needs:</strong> Custom-built to meet your exact requirements, ensuring your CMS is optimized for your workflow.</li>
-            <li><strong>Better Flexibility:</strong> Unlike pre-built platforms, custom CMS solutions give you full control over the design, functionality, and scalability of your website.</li>
-            <li><strong>Scalability:</strong> As your business grows, your custom CMS can be expanded and adapted to handle increased traffic and features, giving you long-term sustainability.</li>
+            <li>
+              <strong>Tailored to Your Needs:</strong> Custom-built to meet your exact requirements, ensuring your CMS is optimized for your workflow.
+            </li>
+            <li>
+              <strong>Better Flexibility:</strong> Unlike pre-built platforms, custom CMS solutions give you full control over the design, functionality, and scalability of your website.
+            </li>
+            <li>
+              <strong>Scalability:</strong> As your business grows, your custom CMS can be expanded and adapted to handle increased traffic and features, giving you long-term sustainability.
+            </li>
           </ul>
         </section>
 
         {/* Showcase Client CMS Websites */}
         <section className="mt-16">
           <h2 className="text-3xl font-semibold text-red-400 mb-4">
-            🌐 Client CMS Websites We've Built
+            🌐 Client CMS Websites We&apos;ve Built
           </h2>
           <p className="text-gray-300">
-            Check out some of the CMS websites we've developed for our clients:
+            Check out some of the CMS websites we&apos;ve developed for our clients:
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
             {/* Example 1 */}
@@ -74,9 +87,20 @@ export default function CMSPage() {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
-              <img src="https://via.placeholder.com/400x250" alt="Client Website 1" className="w-full h-48 object-cover rounded-lg" />
-              <h3 className="text-xl font-semibold text-yellow-300 mt-4">Client Website 1</h3>
-              <p className="text-gray-400 mt-2">A custom CMS designed to meet the client's unique requirements and streamline their content management process.</p>
+              <div className="relative w-full h-48 rounded-lg overflow-hidden">
+                <Image
+                  src="https://via.placeholder.com/400x250"
+                  alt="Client Website 1"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <h3 className="text-xl font-semibold text-yellow-300 mt-4">
+                Client Website 1
+              </h3>
+              <p className="text-gray-400 mt-2">
+                A custom CMS designed to meet the client&apos;s unique requirements and streamline their content management process.
+              </p>
             </motion.div>
 
             {/* Example 2 */}
@@ -85,9 +109,20 @@ export default function CMSPage() {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
-              <img src="https://via.placeholder.com/400x250" alt="Client Website 2" className="w-full h-48 object-cover rounded-lg" />
-              <h3 className="text-xl font-semibold text-yellow-300 mt-4">Client Website 2</h3>
-              <p className="text-gray-400 mt-2">A WordPress site built with SEO-friendly tools, designed to boost organic search rankings and attract more visitors.</p>
+              <div className="relative w-full h-48 rounded-lg overflow-hidden">
+                <Image
+                  src="https://via.placeholder.com/400x250"
+                  alt="Client Website 2"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <h3 className="text-xl font-semibold text-yellow-300 mt-4">
+                Client Website 2
+              </h3>
+              <p className="text-gray-400 mt-2">
+                A WordPress site built with SEO-friendly tools, designed to boost organic search rankings and attract more visitors.
+              </p>
             </motion.div>
 
             {/* Example 3 */}
@@ -96,9 +131,20 @@ export default function CMSPage() {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
-              <img src="https://via.placeholder.com/400x250" alt="Client Website 3" className="w-full h-48 object-cover rounded-lg" />
-              <h3 className="text-xl font-semibold text-yellow-300 mt-4">Client Website 3</h3>
-              <p className="text-gray-400 mt-2">A custom CMS solution designed for scalability and flexibility, ensuring long-term growth and performance.</p>
+              <div className="relative w-full h-48 rounded-lg overflow-hidden">
+                <Image
+                  src="https://via.placeholder.com/400x250"
+                  alt="Client Website 3"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <h3 className="text-xl font-semibold text-yellow-300 mt-4">
+                Client Website 3
+              </h3>
+              <p className="text-gray-400 mt-2">
+                A custom CMS solution designed for scalability and flexibility, ensuring long-term growth and performance.
+              </p>
             </motion.div>
           </div>
         </section>

@@ -6,6 +6,7 @@ import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Play, Pause } from "lucide-react";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -76,7 +77,6 @@ const TestimonialsSection = () => {
   useEffect(() => {
     if (!sliderInstance || !autoPlay) return;
     const interval = setInterval(() => {
-      // Call next() on the slider instance.
       sliderInstance.next();
     }, 1500);
     return () => clearInterval(interval);
@@ -96,47 +96,66 @@ const TestimonialsSection = () => {
           What Our Clients Say
         </motion.h2>
 
-       {/* AutoPlay Toggle Button */}
-<motion.button
-  onClick={() => setAutoPlay((prev) => !prev)}
-  className="mb-6 inline-block bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-800 dark:text-white font-bold py-2 px-4 rounded-full transition-colors duration-300"
-  variants={fadeInUp}
-  initial="initial"
-  whileInView="animate"
-  viewport={{ once: true }}
->
-  {autoPlay ? (
-    <Pause size={26} /> // Pause icon when autoplay is enabled
-  ) : (
-    <Play size={26} /> // Play icon when autoplay is disabled
-  )}
-</motion.button>
+        {/* AutoPlay Toggle Button */}
+        <motion.button
+          onClick={() => setAutoPlay((prev) => !prev)}
+          className="mb-6 inline-block bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-800 dark:text-white font-bold py-2 px-4 rounded-full transition-colors duration-300"
+          variants={fadeInUp}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+        >
+          {autoPlay ? (
+            <Pause size={26} /> // Pause icon when autoplay is enabled
+          ) : (
+            <Play size={26} /> // Play icon when autoplay is disabled
+          )}
+        </motion.button>
 
-   {/* Navigation Buttons */}
-<div className="absolute top-2/4 left-26 transform -translate-y-1/2 z-40">
-  <button
-    onClick={() => sliderInstance && sliderInstance.prev()}
-    className="p-4 rounded-full bg-transparent border-4 border-gradient-to-r from-cyan-900 to-blue-800 shadow-xl transition-transform duration-500 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:border-8 focus:outline-none focus:ring-4 focus:ring-cyan-400 focus:ring-opacity-50"
-  >
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-8 w-8">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+        {/* Navigation Buttons */}
+        <div className="absolute top-2/4 left-26 transform -translate-y-1/2 z-40">
+          <button
+            onClick={() => sliderInstance && sliderInstance.prev()}
+            className="p-4 rounded-full bg-transparent border-4 border-gradient-to-r from-cyan-900 to-blue-800 shadow-xl transition-transform duration-500 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:border-8 focus:outline-none focus:ring-4 focus:ring-cyan-400 focus:ring-opacity-50"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              className="h-8 w-8"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+        </div>
 
-    </svg>
-  </button>
-</div>
-
-<div className="absolute top-1/2 right-26 transform -translate-y-1/2 z-40">
-  <button
-    onClick={() => sliderInstance && sliderInstance.next()}
-    className="p-4 rounded-full bg-transparent border-4 border-gradient-to-r from-pink-500 to-red-500 shadow-xl transition-transform duration-500 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:border-8 focus:outline-none focus:ring-4 focus:ring-pink-400 focus:ring-opacity-50"
-  >
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-8 w-8">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
-
-    </svg>
-  </button>
-</div>
-
+        <div className="absolute top-1/2 right-26 transform -translate-y-1/2 z-40">
+          <button
+            onClick={() => sliderInstance && sliderInstance.next()}
+            className="p-4 rounded-full bg-transparent border-4 border-gradient-to-r from-pink-500 to-red-500 shadow-xl transition-transform duration-500 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:border-8 focus:outline-none focus:ring-4 focus:ring-pink-400 focus:ring-opacity-50"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              className="h-8 w-8"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+        </div>
 
         {/* Testimonial Slider */}
         <div ref={sliderRef} className="keen-slider">
@@ -149,11 +168,15 @@ const TestimonialsSection = () => {
                 whileInView="animate"
                 viewport={{ once: true }}
               >
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.author}
-                  className="w-12 h-12 rounded-full object-cover mb-4 border-2 border-blue-500"
-                />
+                <div className="relative w-12 h-12 mb-4 border-2 border-blue-500 rounded-full overflow-hidden">
+                  <Image
+                    src={testimonial.image}
+                    alt={testimonial.author}
+                    width={48}
+                    height={48}
+                    className="object-cover"
+                  />
+                </div>
                 <p className="text-gray-700 dark:text-gray-300 italic mb-2 text-lg">
                   {testimonial.quote}
                 </p>

@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function CustomDevelopmentPage() {
   return (
@@ -45,7 +46,13 @@ export default function CustomDevelopmentPage() {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
-              <img src="https://via.placeholder.com/400x250" alt="CRM System" className="w-full h-48 object-cover rounded-lg" />
+              <Image
+                src="https://via.placeholder.com/400x250"
+                alt="CRM System"
+                width={400}
+                height={250}
+                className="w-full h-48 object-cover rounded-lg"
+              />
               <h3 className="text-xl font-semibold text-yellow-300 mt-4">CRM Systems</h3>
               <p className="text-gray-400 mt-2">
                 Empower your business with a custom-built CRM that streamlines customer interactions, automates tasks, and improves efficiency.
@@ -58,7 +65,13 @@ export default function CustomDevelopmentPage() {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
-              <img src="https://via.placeholder.com/400x250" alt="Business Applications" className="w-full h-48 object-cover rounded-lg" />
+              <Image
+                src="https://via.placeholder.com/400x250"
+                alt="Business Applications"
+                width={400}
+                height={250}
+                className="w-full h-48 object-cover rounded-lg"
+              />
               <h3 className="text-xl font-semibold text-yellow-300 mt-4">Business Applications</h3>
               <p className="text-gray-400 mt-2">
                 From workflow automation to ERP solutions, we develop custom business applications that fit your unique processes.
@@ -71,7 +84,13 @@ export default function CustomDevelopmentPage() {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
-              <img src="https://via.placeholder.com/400x250" alt="Database Integrations" className="w-full h-48 object-cover rounded-lg" />
+              <Image
+                src="https://via.placeholder.com/400x250"
+                alt="Database Integrations"
+                width={400}
+                height={250}
+                className="w-full h-48 object-cover rounded-lg"
+              />
               <h3 className="text-xl font-semibold text-yellow-300 mt-4">Database Integrations</h3>
               <p className="text-gray-400 mt-2">
                 We integrate secure and scalable database solutions that enhance your data management and business intelligence.
