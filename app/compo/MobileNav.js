@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { Home, Briefcase, Folder, Phone, Edit, Info, X, Sun, Moon } from "lucide-react";
+import { Home, Briefcase, Folder, Phone, Edit, Info, X } from "lucide-react";
 
 const navItems = [
   { href: "/", label: "Home", icon: Home },
@@ -13,43 +13,8 @@ const navItems = [
   { href: "/about", label: "About Us", icon: Info },
 ];
 
-// Define different colors for icons in dark mode
-const darkIconColors = [
-  "text-blue-400",   // Home
-  "text-green-400",  // Services
-  "text-purple-400", // Portfolio
-  "text-red-400",    // Contact
-  "text-yellow-400", // Blog
-  "text-teal-400",   // About Us
-];
-
 const MobileNav = ({ setMenuOpen }) => {
-  const [darkMode, setDarkMode] = useState(false);
   const menuRef = useRef(null);
-
-  // Load theme preference from localStorage
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      setDarkMode(true);
-      document.documentElement.classList.add("dark");
-    }
-  }, []);
-
-  // Toggle Dark Mode
-  const toggleDarkMode = () => {
-    setDarkMode((prev) => {
-      const newMode = !prev;
-      if (newMode) {
-        document.documentElement.classList.add("dark");
-        localStorage.setItem("theme", "dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-        localStorage.setItem("theme", "light");
-      }
-      return newMode;
-    });
-  };
 
   // Close menu when clicking outside
   useEffect(() => {
@@ -96,27 +61,11 @@ const MobileNav = ({ setMenuOpen }) => {
                        hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-orange-400 border border-transparent 
                        dark:border-gray-700 shadow-md dark:shadow-lg"
           >
-            <Icon size={22} className={darkMode ? darkIconColors[index] : "text-current"} />
+            <Icon size={22} className="text-current" />
             {label}
           </motion.a>
         ))}
       </nav>
-
-      {/* Dark Mode Toggle */}
-      <motion.button
-  onClick={toggleDarkMode}
-  initial={{ opacity: 0, y: 10 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ delay: 0.3, duration: 0.3 }}
-  className="mt-auto sm:mt-8 flex items-center justify-center gap-3 p-3 w-full 
-             bg-gray-200 dark:bg-gray-700 text-black dark:text-white 
-             rounded-lg transition-all border border-gray-300 dark:border-gray-700 
-             shadow-lg hover:bg-orange-500 hover:text-white"
->
-  {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-  {darkMode ? "Light Mode" : "Dark Mode"}
-</motion.button>
-
     </motion.div>
   );
 };
