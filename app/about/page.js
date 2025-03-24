@@ -1,130 +1,146 @@
 "use client";
 
 import Image from "next/image";
-import { FaClipboard, FaPaintBrush, FaRocket } from 'react-icons/fa'; // Importing the icons
+import { FaClipboard, FaPaintBrush, FaRocket } from "react-icons/fa";
+import { FaUserCheck, FaSearch, FaClock } from "react-icons/fa";
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-all duration-700">
-      {/* About Section */}
-      <div className="container mx-auto py-20 px-6 lg:px-24">
-        <section className="text-center mb-16">
-          <h2 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#E69A10] to-[#E5970F] mb-6 tracking-wide">
+    <div className="min-h-screen bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-white transition-colors duration-700 mt-16">
+      <div className="container mx-auto py-16 sm:py-20 lg:py-24 px-4 sm:px-8 md:px-16 lg:px-32">
+        
+        {/* About Section */}
+        <section className="text-center mb-16 sm:mb-20">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-500 mb-6 sm:mb-8">
             About Me
           </h2>
-          <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 px-6 md:px-16">
-            I am a passionate developer dedicated to providing high-quality web
-            solutions, including web design, development, and CMS services. My
-            goal is to empower businesses with impactful digital experiences.
+          <p className="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-8 sm:mb-10 px-4">
+            I am a passionate developer dedicated to providing high-quality web solutions,
+            including web design, development, and CMS services. My goal is to empower businesses
+            with impactful digital experiences.
           </p>
-
-          <div className="flex justify-center mb-12">
-            <div className="relative w-48 h-48 md:w-64 md:h-64">
+          <div className="flex justify-center mb-10">
+            <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 rounded-full overflow-hidden shadow-2xl transform transition-transform duration-500 hover:scale-110">
               <Image
-                src="/profile-photo.jpg"
+                src="/profile.png"
                 alt="My Profile"
                 layout="fill"
                 objectFit="cover"
-                className="rounded-full shadow-lg transition-all duration-500 transform hover:scale-110"
               />
             </div>
           </div>
         </section>
 
-        {/* Mission and Vision Section */}
-        <section className="flex justify-between items-start space-x-6 mb-16">
-          <div className="w-1/2">
-            <h3 className="text-3xl font-semibold text-[#E69A10] mb-4">My Mission</h3>
-            <p className="text-lg text-gray-700 dark:text-gray-300">
-              My mission is to deliver cutting-edge web solutions that transform
-              the digital presence of my clients, focusing on quality, creativity,
-              and efficiency.
+        {/* Mission & Vision Section */}
+        <section className="flex flex-col md:flex-row justify-between items-center gap-10 mb-16 sm:mb-20">
+          <div className="flex-1 px-4">
+            <h3 className="text-2xl sm:text-3xl font-semibold text-yellow-500 mb-3">
+              My Mission
+            </h3>
+            <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300">
+              My mission is to deliver cutting-edge web solutions that transform the digital presence of my clients,
+              focusing on quality, creativity, and efficiency.
             </p>
           </div>
-
-          <div className="w-1/2">
-            <h3 className="text-3xl font-semibold text-[#E69A10] mb-4">My Vision</h3>
-            <p className="text-lg text-gray-700 dark:text-gray-300">
-              I envision becoming a leading provider of custom digital solutions
-              by embracing innovation and excellence in everything I do.
+          <div className="flex-1 px-4">
+            <h3 className="text-2xl sm:text-3xl font-semibold text-yellow-500 mb-3">
+              My Vision
+            </h3>
+            <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300">
+              I envision becoming a leading provider of custom digital solutions by embracing innovation and excellence
+              in everything I do.
             </p>
           </div>
         </section>
 
         {/* Approach Section */}
-        <section className="bg-gradient-to-br from-[#F9F9F9] to-[#F1F5F9] dark:bg-gradient-to-br dark:from-[#2D3748] dark:to-[#1A202C] py-20 px-6 rounded-xl shadow-2xl mb-20">
-          <h3 className="text-4xl font-bold text-center text-[#E69A10] mb-12">
+        <section className="bg-white dark:bg-gray-700 py-12 sm:py-16 px-6 sm:px-10 rounded-2xl shadow-2xl mb-16 transform hover:shadow-3xl transition-all duration-500">
+          <h3 className="text-3xl sm:text-4xl font-bold text-center text-yellow-500 mb-8">
             My Approach
           </h3>
-          <div className="grid lg:grid-cols-3 gap-12 md:px-16">
-            <div className="space-y-6 transform hover:scale-105 transition-all text-center">
-              <div className="bg-gradient-to-r from-[#101828] to-[#101828] rounded-full p-5 mb-6 inline-block">
-                <FaClipboard className="text-white text-3xl" /> {/* Use FaClipboard Icon */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <FaClipboard className="text-blue-500 text-3xl sm:text-4xl" />,
+                title: "Consultation & Discovery",
+                description:
+                  "I start by understanding your goals, challenges, and vision to craft a personalized strategy for success.",
+              },
+              {
+                icon: <FaPaintBrush className="text-green-500 text-3xl sm:text-4xl" />,
+                title: "Design & Prototyping",
+                description:
+                  "I create stunning visuals and functional prototypes to ensure your vision comes to life beautifully.",
+              },
+              {
+                icon: <FaRocket className="text-red-500 text-3xl sm:text-4xl" />,
+                title: "Development & Launch",
+                description:
+                  "Using the latest technologies, I bring your website to life, ensuring it’s fast, responsive, and user-friendly.",
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center text-center p-6 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl transform transition-transform duration-500 hover:scale-105"
+              >
+                <div className="bg-[#364153] rounded-full p-4 mb-4">
+                  {item.icon}
+                </div>
+                <h4 className="text-xl sm:text-2xl font-semibold text-yellow-500 mb-2">
+                  {item.title}
+                </h4>
+                <p className="text-base sm:text-lg text-gray-200">
+                  {item.description}
+                </p>
               </div>
-              <h4 className="text-2xl font-semibold text-[#E69A10]">Consultation & Discovery</h4>
-              <p className="text-lg text-gray-700 dark:text-gray-300">
-                I start by understanding your goals, challenges, and vision to
-                craft a personalized strategy for success.
-              </p>
-            </div>
-            <div className="space-y-6 transform hover:scale-105 transition-all text-center">
-              <div className="bg-gradient-to-r from-[#101828] to-[#101828] rounded-full p-5 mb-6 inline-block">
-                <FaPaintBrush className="text-white text-3xl" /> {/* Use FaPaintBrush Icon */}
-              </div>
-              <h4 className="text-2xl font-semibold text-[#E69A10]">Design & Prototyping</h4>
-              <p className="text-lg text-gray-700 dark:text-gray-300">
-                I create stunning visuals and functional prototypes to ensure
-                your vision comes to life beautifully.
-              </p>
-            </div>
-            <div className="space-y-6 transform hover:scale-105 transition-all text-center">
-              <div className="bg-gradient-to-r from-[#101828] to-[#101828] rounded-full p-5 mb-6 inline-block">
-                <FaRocket className="text-white text-3xl" /> {/* Use FaRocket Icon */}
-              </div>
-              <h4 className="text-2xl font-semibold text-[#E69A10]">Development & Launch</h4>
-              <p className="text-lg text-gray-700 dark:text-gray-300">
-                Using the latest technologies, I bring your website to life,
-                ensuring it’s fast, responsive, and user-friendly.
-              </p>
-            </div>
+            ))}
           </div>
         </section>
 
         {/* Why Choose Me Section */}
-        <section className="text-center mb-20">
-          <h3 className="text-4xl font-bold text-[#E69A10] mb-12">Why Choose Me?</h3>
-
-          <div className="grid md:grid-cols-3 gap-10 px-6 lg:px-24">
-            <div className="p-10 bg-[#F9FAFB] dark:bg-[#2e3a4e] rounded-xl shadow-2xl hover:scale-105 transition-all">
-              <h4 className="text-xl font-semibold text-[#E69A10] mb-4">
-                Personalized Solutions
-              </h4>
-              <p className="text-lg text-gray-600 dark:text-gray-300">
-                I offer customized digital solutions that meet the unique needs
-                of your business, ensuring maximum impact.
-              </p>
-            </div>
-            <div className="p-10 bg-[#F9FAFB] dark:bg-[#2e3a4e]  rounded-xl shadow-2xl hover:scale-105 transition-all">
-              <h4 className="text-xl font-semibold text-[#E69A10] mb-4">
-                Attention to Detail
-              </h4>
-              <p className="text-lg text-gray-600 dark:text-gray-300">
-                My attention to detail ensures that every aspect of your project
-                is meticulously planned and executed to perfection.
-              </p>
-            </div>
-            <div className="p-10 bg-[#F9FAFB] dark:bg-[#2e3a4e]  rounded-xl shadow-2xl hover:scale-105 transition-all">
-              <h4 className="text-xl font-semibold text-[#E69A10] mb-4">
-                Timely Delivery
-              </h4>
-              <p className="text-lg text-gray-600 dark:text-gray-300">
-                I respect your time and am committed to delivering projects on
-                time without compromising on quality.
-              </p>
-            </div>
+        <section className="text-center mb-16 sm:mb-20">
+          <h3 className="text-3xl sm:text-4xl font-bold text-yellow-500 mb-8">
+            Why Choose Me?
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            {[
+              {
+                title: "Personalized Solutions",
+                description:
+                  "I offer customized digital solutions that meet the unique needs of your business, ensuring maximum impact.",
+                icon: <FaUserCheck className="text-teal-500 text-3xl sm:text-4xl mb-3" />,
+              },
+              {
+                title: "Attention to Detail",
+                description:
+                  "My attention to detail ensures that every aspect of your project is meticulously planned and executed to perfection.",
+                icon: <FaSearch className="text-purple-500 text-3xl sm:text-4xl mb-3" />,
+              },
+              {
+                title: "Timely Delivery",
+                description:
+                  "I respect your time and am committed to delivering projects on time without compromising on quality.",
+                icon: <FaClock className="text-orange-500 text-3xl sm:text-4xl mb-3" />,
+              },
+            ].map((feature, index) => (
+              <div
+                key={index}
+                className="p-6 sm:p-8 bg-gray-100 dark:bg-gray-800 rounded-2xl shadow-lg transition-transform duration-500 transform hover:scale-105 hover:shadow-2xl"
+              >
+                <div className="flex justify-center mb-3">
+                  {feature.icon}
+                </div>
+                <h4 className="text-xl sm:text-2xl font-semibold text-yellow-500 mb-2">
+                  {feature.title}
+                </h4>
+                <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
           </div>
         </section>
-
+        
       </div>
     </div>
   );
