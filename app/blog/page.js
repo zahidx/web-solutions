@@ -69,7 +69,7 @@ export default function BlogPage() {
 
   return (
     <motion.div
-      className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300"
+      className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300 mt-20"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -82,21 +82,21 @@ export default function BlogPage() {
         }}
         transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
       >
-        <div className="max-w-7xl mx-auto px-6 py-20">
-          <h1 className="text-5xl font-extrabold text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-white">
             Blog & Insights
           </h1>
-          <p className="mt-4 text-2xl text-white/90">
+          <p className="mt-4 text-lg sm:text-2xl text-white/90">
             Stay updated with the latest trends, case studies, and tutorials.
           </p>
         </div>
       </motion.div>
 
-      <div className="max-w-7xl mx-auto px-6 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         {/* Filters & Search */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-10">
           {/* Category Filter */}
-          <div className="flex space-x-4">
+          <div className="flex flex-wrap gap-3">
             {["All", "Industry Insights", "Case Study", "How-To"].map(
               (category) => {
                 const isActive = selectedCategory === category;
@@ -106,7 +106,7 @@ export default function BlogPage() {
                     onClick={() => setSelectedCategory(category)}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`px-6 py-3 rounded-full text-sm font-medium transition 
+                    className={`px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-medium transition 
                       ${
                         isActive
                           ? "bg-purple-600 text-white shadow-lg"
@@ -127,10 +127,10 @@ export default function BlogPage() {
               placeholder="Search blogs..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full px-6 py-3 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
+              className="w-full px-4 sm:px-6 py-2 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
             />
             <Search
-              className="absolute right-5 top-3 text-gray-500 dark:text-gray-400"
+              className="absolute right-4 sm:right-5 top-2 sm:top-3 text-gray-500 dark:text-gray-400"
               size={20}
             />
           </div>
@@ -138,7 +138,7 @@ export default function BlogPage() {
 
         {/* Blog Cards with Staggered Animations */}
         <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-10"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
           variants={containerVariants}
           initial="hidden"
           animate="show"
@@ -153,7 +153,7 @@ export default function BlogPage() {
                 whileHover={{ scale: 1.03 }}
                 exit={{ opacity: 0, y: 50 }}
               >
-                <div className="relative w-full h-56">
+                <div className="relative w-full h-48 sm:h-56">
                   <Image
                     src={post.image}
                     alt={post.title}
@@ -166,17 +166,19 @@ export default function BlogPage() {
                     whileHover={{ opacity: 1, backgroundColor: "rgba(0,0,0,0.5)" }}
                     transition={{ duration: 0.3 }}
                   >
-                    <span className="text-white text-lg font-semibold">
+                    <span className="text-white text-sm sm:text-lg font-semibold">
                       Read More
                     </span>
                   </motion.div>
                 </div>
-                <div className="p-6">
-                  <span className="text-xs uppercase tracking-wider text-purple-500 font-semibold">
+                <div className="p-4 sm:p-6">
+                  <span className="text-[10px] sm:text-xs uppercase tracking-wider text-purple-500 font-semibold">
                     {post.category}
                   </span>
-                  <h3 className="mt-3 text-2xl font-semibold">{post.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm mt-2">
+                  <h3 className="mt-2 text-xl sm:text-2xl font-semibold">
+                    {post.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm mt-1">
                     {post.description}
                   </p>
                 </div>
