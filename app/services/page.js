@@ -103,14 +103,14 @@ export default function AdvancedLightPage() {
   const [selected, setSelected] = useState(-1);
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-gray-50 to-white dark:bg-gradient-to-r dark:from-[#0E1628] dark:to-[#380643] text-gray-900 dark:text-gray-100 overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-r from-gray-50 to-white dark:bg-gradient-to-r dark:from-[#0E1628] dark:to-[#380643] text-gray-900 dark:text-gray-100 overflow-hidden mt-20">
       {/* Hero Section */}
       <section className="py-20 px-6 text-center">
         <motion.h1
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-indigo-500 mb-6"
+          className="text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-indigo-500 mb-8"
         >
           Elevate Your Digital Experience
         </motion.h1>

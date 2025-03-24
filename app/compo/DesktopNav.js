@@ -15,13 +15,9 @@ import {
   Workflow,
   Info,
   Phone,
-  Moon,
-  Sun,
 } from "lucide-react";
 
 const DesktopNav = ({
-  darkMode,
-  setDarkMode,
   portfolioDropdownOpen,
   handlePortfolioDropdownToggle,
   moreDropdownOpen,
@@ -61,9 +57,7 @@ const DesktopNav = ({
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className={`absolute left-0 mt-2 w-64 bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4 z-10 ${
-                darkMode ? "text-white" : "text-black"
-              }`}
+              className="absolute left-0 mt-2 w-64 bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4 z-10 text-gray-900 dark:text-gray-100"
             >
               <Link
                 className="block p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded transition-all flex items-center"
@@ -76,7 +70,7 @@ const DesktopNav = ({
                 className="block p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded transition-all flex items-center"
                 href="/portfolio2"
               >
-                <Image size={16} className="mr-2 inline" alt="" /> {/* Added alt="" here */}
+                <Image size={16} className="mr-2 inline" alt="" />
                 UI/UX Projects
               </Link>
               <Link
@@ -108,9 +102,7 @@ const DesktopNav = ({
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className={`absolute left-0 mt-2 w-64 bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4 z-10 ${
-                darkMode ? "text-white" : "text-black"
-              }`}
+              className="absolute left-0 mt-2 w-64 bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4 z-10 text-gray-900 dark:text-gray-100"
             >
               <Link
                 className="block p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded transition-all flex items-center"
@@ -147,14 +139,6 @@ const DesktopNav = ({
         <Phone size={16} className="mr-2 inline" />
         Contact
       </Link>
-
-      {/* Dark Mode Toggle */}
-      <button
-        onClick={() => setDarkMode(!darkMode)}
-        className="p-3 rounded-full bg-gray-800 dark:bg-white text-white dark:text-black transition-all duration-300 hover:bg-orange-500"
-      >
-        {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-      </button>
     </div>
   );
 };
