@@ -108,7 +108,7 @@ const MobileNav = ({ setMenuOpen }) => {
   initial={{ opacity: 0, y: 10 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.3, duration: 0.3 }}
-  className="mt-auto sm:mt-6 flex items-center justify-center gap-3 p-3 w-full 
+  className="mt-auto sm:mt-8 flex items-center justify-center gap-3 p-3 w-full 
              bg-gray-200 dark:bg-gray-700 text-black dark:text-white 
              rounded-lg transition-all border border-gray-300 dark:border-gray-700 
              shadow-lg hover:bg-orange-500 hover:text-white"

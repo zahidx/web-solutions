@@ -24,7 +24,7 @@ const DesktopNav = ({
   handleMoreDropdownToggle,
 }) => {
   return (
-    <div className="hidden md:flex space-x-8 items-center text-lg">
+    <div className="hidden md:flex space-x-8 items-center text-lg mt-3">
       <Link
         className="hover:text-orange-400 transition-all duration-300 text-gray-900 dark:text-gray-100 flex items-center"
         href="/"
