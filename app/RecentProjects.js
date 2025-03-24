@@ -13,13 +13,13 @@ const projects = [
   },
   {
     title: 'Portfolio',
-    description: 'A showcase of professional work and projects, designed with a personal touch.',
+    description: 'A showcase of professional work and projects, with a personal touch.',
     link: '/project2',
     icon: <FaRocket className="text-6xl text-[#FF6A00]" />,
   },
   {
     title: 'E-commerce',
-    description: 'An e-commerce platform with product listings, shopping cart, and checkout features.',
+    description: 'An e-commerce platform with product listings, shopping cart, and checkout.',
     link: '/project3',
     icon: <FaShoppingCart className="text-6xl text-[#FF6A00]" />,
   },
