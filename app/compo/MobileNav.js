@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { Home, Briefcase, Folder, Phone, Edit, Info, X } from "lucide-react";
+import { Home, Briefcase, Folder, Phone, Edit, Info, X, LogIn } from "lucide-react";
 
 const navItems = [
   { href: "/", label: "Home", icon: Home },
@@ -11,6 +11,7 @@ const navItems = [
   { href: "/contact", label: "Contact", icon: Phone },
   { href: "/blog", label: "Blog", icon: Edit },
   { href: "/about", label: "About Us", icon: Info },
+  { href: "/login", label: "Login", icon: LogIn }, // Updated to use LogIn icon
 ];
 
 // Define different colors for icons in dark mode
@@ -21,6 +22,7 @@ const darkIconColors = [
   "text-red-400",    // Contact
   "text-yellow-400", // Blog
   "text-teal-400",   // About Us
+  "text-orange-400", // Login (New Color)
 ];
 
 const MobileNav = ({ setMenuOpen }) => {

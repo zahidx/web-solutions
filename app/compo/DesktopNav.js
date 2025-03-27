@@ -15,6 +15,7 @@ import {
   Workflow,
   Info,
   Phone,
+  LogIn,
 } from "lucide-react";
 
 const DesktopNav = ({
@@ -70,7 +71,7 @@ const DesktopNav = ({
                 className="block p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded transition-all flex items-center"
                 href="/portfolio2"
               >
-                <Image size={16} className="mr-2 inline" alt="" />
+                <Image size={16} className="mr-2 inline" />
                 UI/UX Projects
               </Link>
               <Link
@@ -138,6 +139,15 @@ const DesktopNav = ({
       >
         <Phone size={16} className="mr-2 inline" />
         Contact
+      </Link>
+
+      {/* Login Button */}
+      <Link
+        className="ml-4 px-4 py-2 border border-orange-400 text-orange-400 rounded-lg hover:bg-orange-400 hover:text-white transition-all duration-300 flex items-center"
+        href="/login"
+      >
+        <LogIn size={16} className="mr-2 inline" />
+        Login
       </Link>
     </div>
   );
