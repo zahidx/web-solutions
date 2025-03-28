@@ -30,7 +30,7 @@ const QRCode = () => {
       {qrData.map(({ id, platform, message, icon, qrCodeImage }) => (
         <div
           key={id}
-          className="flex flex-col items-center justify-center bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl"
+          className={`flex flex-col items-center justify-center bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl ${id === 2 ? 'glowing-border' : ''}`}
         >
           {/* Message Text */}
           <p className="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-white mb-6 text-center">

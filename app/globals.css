@@ -30,3 +30,14 @@ body {
 html, body {
   overflow-x: hidden;
 }
+
+/* Custom glowing border effect */
+.glowing-border {
+  position: relative;
+  box-shadow: 0 0 10px rgba(6, 169, 158, 0.945), 0 0 20px rgba(3, 112, 143, 0.87), 0 0 30px rgba(2, 133, 147, 0.894);
+  transition: all 0.3s ease-in-out;
+}
+
+.glowing-border:hover {
+  box-shadow: 0 0 5px rgba(121, 23, 1, 0.938), 0 0 10px rgba(190, 3, 94, 0.911), 0 0 10px rgba(170, 1, 1, 0.928);
+}
