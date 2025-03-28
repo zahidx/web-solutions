@@ -1,18 +1,21 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
-import DarkModeToggler from "./DarkModeToggler"; // Import DarkModeToggler
+import DarkModeToggler from "./DarkModeToggler";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [portfolioDropdownOpen, setPortfolioDropdownOpen] = useState(false);
   const [moreDropdownOpen, setMoreDropdownOpen] = useState(false);
+  
+  // Ref for dropdowns
+  const dropdownRef = useRef(null);
 
   // Handle scroll event
   useEffect(() => {
@@ -21,6 +24,18 @@ const Navbar = () => {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setPortfolioDropdownOpen(false);
+        setMoreDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   return (
@@ -45,18 +60,20 @@ const Navbar = () => {
         </motion.div>
 
         {/* Desktop Navigation */}
-        <DesktopNav
-          portfolioDropdownOpen={portfolioDropdownOpen}
-          handlePortfolioDropdownToggle={() => {
-            setPortfolioDropdownOpen(!portfolioDropdownOpen);
-            setMoreDropdownOpen(false);
-          }}
-          moreDropdownOpen={moreDropdownOpen}
-          handleMoreDropdownToggle={() => {
-            setMoreDropdownOpen(!moreDropdownOpen);
-            setPortfolioDropdownOpen(false);
-          }}
-        />
+        <div ref={dropdownRef}>
+          <DesktopNav
+            portfolioDropdownOpen={portfolioDropdownOpen}
+            handlePortfolioDropdownToggle={() => {
+              setPortfolioDropdownOpen(!portfolioDropdownOpen);
+              setMoreDropdownOpen(false);
+            }}
+            moreDropdownOpen={moreDropdownOpen}
+            handleMoreDropdownToggle={() => {
+              setMoreDropdownOpen(!moreDropdownOpen);
+              setPortfolioDropdownOpen(false);
+            }}
+          />
+        </div>
 
         {/* Dark Mode Toggler */}
         <DarkModeToggler />
@@ -72,9 +89,7 @@ const Navbar = () => {
 
       {/* Full-Screen Mobile Menu */}
       <AnimatePresence>
-        {menuOpen && (
-          <MobileNav setMenuOpen={setMenuOpen} />
-        )}
+        {menuOpen && <MobileNav setMenuOpen={setMenuOpen} />}
       </AnimatePresence>
     </nav>
   );

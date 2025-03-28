@@ -4,6 +4,7 @@ import Image from "next/image";
 import { FaClipboard, FaPaintBrush, FaRocket } from "react-icons/fa";
 import { FaUserCheck, FaSearch, FaClock } from "react-icons/fa";
 import { FaBullseye, FaLightbulb } from 'react-icons/fa';
+
 export default function About() {
   return (
     <div className="min-h-screen bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-white transition-colors duration-700 mt-16">
@@ -35,7 +36,7 @@ export default function About() {
 <section className="flex flex-col md:flex-row justify-between items-center gap-10 mb-16 sm:mb-20">
   <div className="flex-1 px-4">
     <div className="flex items-center gap-2">
-      <FaBullseye className="w-6 h-6 text-yellow-500" />
+      <FaBullseye className="w-8 h-8 text-yellow-500" />
       <h3 className="text-2xl sm:text-3xl font-semibold text-yellow-500 mb-3">My Mission</h3>
     </div>
     <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300">
@@ -45,7 +46,7 @@ export default function About() {
   </div>
   <div className="flex-1 px-4">
     <div className="flex items-center gap-2">
-      <FaLightbulb className="w-6 h-6 text-yellow-500" />
+      <FaLightbulb className="w-8 h-8 text-yellow-500" />
       <h3 className="text-2xl sm:text-3xl font-semibold text-yellow-500 mb-3">My Vision</h3>
     </div>
     <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300">
@@ -55,7 +56,6 @@ export default function About() {
   </div>
 </section>
 
-
         {/* Approach Section */}
         <section className="bg-white dark:bg-gray-700 py-12 sm:py-16 px-6 sm:px-10 rounded-2xl shadow-2xl mb-16 transform hover:shadow-3xl transition-all duration-500">
           <h3 className="text-3xl sm:text-4xl font-bold text-center text-yellow-500 mb-8">
@@ -64,19 +64,19 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                icon: <FaClipboard className="text-blue-500 text-3xl sm:text-4xl" />,
+                icon: <FaClipboard className="text-blue-500 text-4xl sm:text-5xl" />,
                 title: "Consultation & Discovery",
                 description:
                   "I start by understanding your goals, challenges, and vision to craft a personalized strategy for success.",
               },
               {
-                icon: <FaPaintBrush className="text-green-500 text-3xl sm:text-4xl" />,
+                icon: <FaPaintBrush className="text-green-500 text-4xl sm:text-5xl" />,
                 title: "Design & Prototyping",
                 description:
                   "I create stunning visuals and functional prototypes to ensure your vision comes to life beautifully.",
               },
               {
-                icon: <FaRocket className="text-red-500 text-3xl sm:text-4xl" />,
+                icon: <FaRocket className="text-red-500 text-4xl sm:text-5xl" />,
                 title: "Development & Launch",
                 description:
                   "Using the latest technologies, I bring your website to life, ensuring it’s fast, responsive, and user-friendly.",
@@ -86,7 +86,7 @@ export default function About() {
                 key={index}
                 className="flex flex-col items-center text-center p-6 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl transform transition-transform duration-500 hover:scale-105"
               >
-                <div className="bg-[#364153] rounded-full p-4 mb-4">
+                <div className="bg-[#364153] rounded-full p-6 mb-4">
                   {item.icon}
                 </div>
                 <h4 className="text-xl sm:text-2xl font-semibold text-yellow-500 mb-2">
@@ -111,19 +111,19 @@ export default function About() {
                 title: "Personalized Solutions",
                 description:
                   "I offer customized digital solutions that meet the unique needs of your business, ensuring maximum impact.",
-                icon: <FaUserCheck className="text-teal-500 text-3xl sm:text-4xl mb-3" />,
+                icon: <FaUserCheck className="text-teal-500 text-4xl sm:text-5xl mb-3" />,
               },
               {
                 title: "Attention to Detail",
                 description:
                   "My attention to detail ensures that every aspect of your project is meticulously planned and executed to perfection.",
-                icon: <FaSearch className="text-purple-500 text-3xl sm:text-4xl mb-3" />,
+                icon: <FaSearch className="text-purple-500 text-4xl sm:text-5xl mb-3" />,
               },
               {
                 title: "Timely Delivery",
                 description:
                   "I respect your time and am committed to delivering projects on time without compromising on quality.",
-                icon: <FaClock className="text-orange-500 text-3xl sm:text-4xl mb-3" />,
+                icon: <FaClock className="text-orange-500 text-4xl sm:text-5xl mb-3" />,
               },
             ].map((feature, index) => (
               <div
