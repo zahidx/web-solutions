@@ -23,7 +23,7 @@ export default function Login() {
       </button>
 
       {/* Logo */}
-      <div className="mb-20 mt-44 z-10">
+      <div className="mb-20 mt-24 z-10">
         <h1 className="text-4xl font-extrabold tracking-widest mb-4">XWEBHUB™</h1>
       </div>
 
