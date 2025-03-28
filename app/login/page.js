@@ -1,15 +1,21 @@
-"use client"; // This makes sure the file is treated as a client component
+"use client";  // Ensuring the component is rendered on the client side
 
 import { Mail, ArrowLeft, Facebook } from "lucide-react";
 import { FcGoogle } from "react-icons/fc";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";  // Use the correct hook from "next/navigation"
 
 export default function Login() {
+  const router = useRouter();  // Initialize the router
+
+  const handleEmailLogin = () => {
+    router.push("/signup");  // Navigate to the signup page when "Continue with Email" is clicked
+  };
+
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-purple-900 via-black to-gray-900 text-white px-6 relative overflow-hidden">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-gray-700 via-black to-gray-900 text-white px-6 relative overflow-hidden">
       {/* Optional Animated Background Pattern */}
       <div className="absolute top-0 left-0 w-full h-full bg-[url('/path/to/animated-pattern.svg')] opacity-20 animate-pulse"></div>
-
 
       {/* Back Button */}
       <button className="absolute top-4 left-4 text-white hover:text-gray-300 transition-colors duration-300 z-10">
@@ -56,6 +62,7 @@ export default function Login() {
           <motion.button 
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
+            onClick={handleEmailLogin}  // Add click handler here
             className="w-full flex items-center justify-center gap-2 bg-gray-800 text-white py-3 rounded-md transition-all duration-200"
           >
             <Mail size={24} />
