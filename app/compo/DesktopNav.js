@@ -17,6 +17,7 @@ import {
   Phone,
   LogIn,
 } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const DesktopNav = ({
   portfolioDropdownOpen,
@@ -24,8 +25,22 @@ const DesktopNav = ({
   moreDropdownOpen,
   handleMoreDropdownToggle,
 }) => {
+  const [navbarBgColor, setNavbarBgColor] = useState("");
+
+  // Dynamically set navbar background color based on content background
+  useEffect(() => {
+    const contentElement = document.querySelector("main"); // Assuming the content page has a <main> tag
+    if (contentElement) {
+      const contentBgColor = window.getComputedStyle(contentElement).backgroundColor;
+      setNavbarBgColor(contentBgColor); // Update navbar background color dynamically
+    }
+  }, []);
+
   return (
-    <div className="hidden md:flex space-x-8 items-center text-lg mt-3">
+    <div
+      className="hidden md:flex space-x-8 items-center text-lg mt-3"
+      style={{ backgroundColor: navbarBgColor }} // Apply dynamic background color
+    >
       <Link
         className="hover:text-orange-400 transition-all duration-300 text-gray-900 dark:text-gray-100 flex items-center"
         href="/"

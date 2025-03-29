@@ -1,106 +1,12 @@
 "use client";
-import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  FaLaptopCode,
-  FaSearch,
-  FaWordpress,
-  FaShoppingCart,
-  FaCogs,
-} from "react-icons/fa";
-
-const services = [
-  {
-    title: "Web Design & Development",
-    description:
-      "We craft responsive, user-friendly websites using Figma, Adobe XD, and Webflow. Our tech stack includes HTML5, CSS3, JavaScript, React, and Node.js.",
-    icon: <FaLaptopCode className="text-6xl text-blue-500" />,
-    cta: "Get a Custom Design",
-    link: "/custom",
-  },
-  {
-    title: "SEO Services",
-    description:
-      "Boost your rankings with On-Page & Off-Page SEO, Content Optimization, and in-depth analytics using Google Analytics, SEMrush, and Ahrefs.",
-    icon: <FaSearch className="text-6xl text-green-500" />,
-    cta: "Boost Your Rankings",
-    link: "/seo",
-  },
-  {
-    title: "CMS Solutions (WordPress & Custom CMS)",
-    description:
-      "Leverage WordPress for easy management or get a custom CMS tailored to your unique needs for maximum flexibility.",
-    icon: <FaWordpress className="text-6xl text-purple-500" />,
-    cta: "Start Your CMS Project",
-    link: "/cms",
-  },
-  {
-    title: "E-Commerce Solutions",
-    description:
-      "Create powerful online stores with Shopify, WooCommerce, and Magento, featuring secure payments and inventory management.",
-    icon: <FaShoppingCart className="text-6xl text-yellow-500" />,
-    cta: "Launch Your Store Today",
-    link: "/ecommerce",
-  },
-  {
-    title: "Custom Development",
-    description:
-      "Build scalable solutions like CRM systems, business applications, and database integrations, tailored to your business needs.",
-    icon: <FaCogs className="text-6xl text-red-500" />,
-    cta: "Build Your Custom Solution",
-    link: "/custom-web",
-  },
-];
-
-const projects = [
-  {
-    title: "Innovative Portfolio",
-    description:
-      "A dynamic showcase of our latest design and development projects, featuring interactive demos and cutting-edge tech.",
-    imageUrl: "/b1.png",
-  },
-  {
-    title: "E-Commerce Revolution",
-    description:
-      "A comprehensive online store that blends stunning design with powerful backend technology for a seamless shopping experience.",
-    imageUrl: "/b2.png",
-  },
-  {
-    title: "SEO Mastery",
-    description:
-      "A project highlighting our SEO strategies in action—optimizing content, driving organic traffic, and increasing conversions.",
-    imageUrl: "/b3.png",
-  },
-];
-
-const testimonials = [
-  {
-    name: "Jane Doe",
-    role: "CEO, Tech Innovators",
-    feedback:
-      "Their innovative design and seamless development process transformed our digital presence. Highly recommended!",
-    avatar: "/profile.png",
-  },
-  {
-    name: "John Smith",
-    role: "Marketing Director, BrandBoost",
-    feedback:
-      "The SEO and digital solutions provided were exceptional. Our traffic and conversions have never been higher.",
-    avatar: "/profile.png",
-  },
-  {
-    name: "Sara Lee",
-    role: "Founder, E-Com Hub",
-    feedback:
-      "A reliable partner in bringing our online store vision to life with excellent support and technical expertise.",
-    avatar: "/profile.png",
-  },
-];
+import { useSelected } from "../hooks/useSelected"; // Import the custom hook
+import { services, projects, testimonials } from "./data"; // Import the data
 
 export default function AdvancedLightPage() {
-  const [selected, setSelected] = useState(-1);
+  const { selected, handleMouseEnter, handleMouseLeave } = useSelected(); 
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-gray-50 to-white dark:bg-gradient-to-r dark:from-[#0E1628] dark:to-[#380643] text-gray-900 dark:text-gray-100 overflow-hidden mt-20">
@@ -145,8 +51,8 @@ export default function AdvancedLightPage() {
               className={`bg-white dark:bg-[#1F2937] rounded-2xl p-8 text-center shadow-lg cursor-pointer transition-all border-2 border-transparent ${
                 selected === index ? "border-blue-500" : "hover:border-blue-300"
               }`}
-              onMouseEnter={() => setSelected(index)}
-              onMouseLeave={() => setSelected(-1)}
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={handleMouseLeave}
             >
               <div className="mb-6 flex justify-center items-center">
                 {service.icon}
@@ -231,9 +137,8 @@ export default function AdvancedLightPage() {
                 />
               </div>
               <p className="text-gray-700 dark:text-gray-300 italic mb-4">
-  &quot;{test.feedback}&quot;
-</p>
-
+                &quot;{test.feedback}&quot;
+              </p>
               <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-100">{test.name}</h4>
               <p className="text-sm text-gray-600 dark:text-gray-400">{test.role}</p>
             </motion.div>

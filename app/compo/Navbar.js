@@ -42,6 +42,9 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all backdrop-blur-3xl ${
         isScrolled ? "border-b-2 border-orange-500" : ""
+      } ${
+        // Dynamically set bg color based on the current theme
+        "bg-white dark:bg-gray-800"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-4 flex justify-between items-center">
@@ -77,8 +80,9 @@ const Navbar = () => {
 
         {/* Dark Mode Toggler */}
         <div className="mt-5">
-  <DarkModeToggler />
-</div>
+          <DarkModeToggler />
+        </div>
+
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
