@@ -76,12 +76,13 @@ const Navbar = () => {
         </div>
 
         {/* Dark Mode Toggler */}
-        <DarkModeToggler />
-
+        <div className="mt-5">
+  <DarkModeToggler />
+</div>
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden text-gray-900 dark:text-gray-100 transition-all duration-300"
+          className="md:hidden text-gray-900 dark:text-gray-100 transition-all duration-300 mt-3"
         >
           {menuOpen ? <X size={30} /> : <Menu size={30} />}
         </button>
