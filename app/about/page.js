@@ -58,7 +58,7 @@ export default function About() {
 
         {/* Approach Section */}
         <section className="bg-white dark:bg-gray-700 py-12 sm:py-16 px-6 sm:px-10 rounded-2xl shadow-2xl mb-16 transform hover:shadow-3xl transition-all duration-500">
-          <h3 className="text-3xl sm:text-4xl font-bold text-center text-yellow-500 mb-8">
+          <h3 className="text-3xl sm:text-4xl font-bold text-center text-[#b15c1f] dark:text-yellow-500 mb-8">
             My Approach
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -84,15 +84,15 @@ export default function About() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center text-center p-6 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl transform transition-transform duration-500 hover:scale-105"
+                className="flex flex-col items-center text-center p-6 bg-gray-100 dark:bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl transform transition-transform duration-500 hover:scale-105"
               >
-                <div className="bg-[#364153] rounded-full p-6 mb-4">
+                <div className="bg-[#dbe3f0] dark:bg-[#364153] rounded-full p-6 mb-4">
                   {item.icon}
                 </div>
-                <h4 className="text-xl sm:text-2xl font-semibold text-yellow-500 mb-2">
+                <h4 className="text-xl sm:text-2xl font-semibold text-blue-600 dark:text-yellow-400  mb-2">
                   {item.title}
                 </h4>
-                <p className="text-base sm:text-lg text-gray-200">
+                <p className="  text-base sm:text-lg text-amber-900 dark:text-gray-200">
                   {item.description}
                 </p>
               </div>

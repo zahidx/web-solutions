@@ -44,7 +44,7 @@ const Navbar = () => {
         isScrolled ? "border-b-2 border-orange-500" : ""
       } ${
         // Dynamically set bg color based on the current theme
-        "bg-white dark:bg-gray-800"
+        "bg-white dark:bg-transparent dark:bg-opacity-90"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-4 flex justify-between items-center">

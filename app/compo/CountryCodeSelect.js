@@ -52,19 +52,18 @@ export default function CountryCodeSelect({ value, onChange }) {
                 <ul
                     ref={dropdownRef}
                     tabIndex={-1} // Prevent focus shift
-                    className="absolute left-0 w-[300px] mt-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md shadow-lg max-h-60 overflow-y-auto z-20"
+                    className="absolute left-0 w-[300px] mt-2 bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-white border border-gray-300 dark:border-gray-600 rounded-md shadow-lg max-h-60 overflow-y-auto z-20"
                 >
-{countryCodes.map((item, index) => (
-    <li
-        key={`${item.code}-${item.country}-${index}`}  // Add index to guarantee uniqueness
-        className="flex items-center p-3 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
-        onClick={() => handleSelect(item.code)}
-    >
-        <span>{item.flag}</span>
-        <span className="ml-2">{item.country} ({item.code})</span>
-    </li>
-))}
-
+                    {countryCodes.map((item, index) => (
+                        <li
+                            key={`${item.code}-${item.country}-${index}`}  // Add index to guarantee uniqueness
+                            className="flex items-center p-3 hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer"
+                            onClick={() => handleSelect(item.code)}
+                        >
+                            <span>{item.flag}</span>
+                            <span className="ml-2">{item.country} ({item.code})</span>
+                        </li>
+                    ))}
                 </ul>
             )}
         </div>
