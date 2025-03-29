@@ -24,7 +24,7 @@ const DarkModeToggler = () => {
   return (
     <button
       onClick={() => setDarkMode(!darkMode)}
-      className="text-gray-900 dark:text-gray-100 transition-all duration-300"
+      className="text-gray-100 dark:text-gray-100 transition-all duration-300"
     >
       {darkMode ? <Sun size={30} /> : <Moon size={30} />}
     </button>

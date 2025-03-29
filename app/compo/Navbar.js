@@ -44,7 +44,7 @@ const Navbar = () => {
         isScrolled ? "border-b-2 border-orange-500" : ""
       } ${
         // Dynamically set bg color based on the current theme
-        "bg-white dark:bg-transparent dark:bg-opacity-90"
+        "bg-[#1C3D3D] dark:bg-transparent dark:bg-opacity-90"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-4 flex justify-between items-center">
@@ -56,7 +56,7 @@ const Navbar = () => {
         >
           <Link href="/" className="flex items-center gap-2">
             <Image src="/logo.png" alt="Logo" width={50} height={40} priority />
-            <span className="text-3xl font-semibold mt-2 -ml-3 text-gray-900 dark:text-white font-premium">
+            <span className="text-3xl font-semibold mt-2 -ml-3 text-gray-100 dark:text-white font-premium">
               webHub
             </span>
           </Link>
@@ -86,7 +86,7 @@ const Navbar = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden text-gray-900 dark:text-gray-100 transition-all duration-300 mt-3"
+          className="md:hidden text-gray-100 dark:text-gray-100 transition-all duration-300 mt-3"
         >
           {menuOpen ? <X size={30} /> : <Menu size={30} />}
         </button>

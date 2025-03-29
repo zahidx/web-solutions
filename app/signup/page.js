@@ -32,7 +32,7 @@ export default function Signup() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row items-center justify-center bg-gradient-to-br from-gray-800 via-black to-gray-900 text-white px-6 sm:px-12 md:px-24 relative overflow-hidden">
+    <div className="min-h-screen flex flex-col md:flex-row items-center justify-center bg-[#1b1f42] dark:bg-gradient-to-br from-gray-800 via-black to-gray-900 text-white px-6 sm:px-12 md:px-24 relative overflow-hidden">
       <ToastContainer />
 
       {/* Animated Background */}
@@ -57,7 +57,7 @@ export default function Signup() {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="relative z-10 bg-black bg-opacity-60 backdrop-blur-xl rounded-xl shadow-2xl p-6 sm:p-10 w-full max-w-lg sm:max-w-md md:max-w-lg md:w-1/2"
+        className="relative z-10 bg-[#1D2146] dark:bg-black bg-opacity-60 backdrop-blur-xl rounded-xl shadow-2xl p-6 sm:p-10 w-full max-w-lg sm:max-w-md md:max-w-lg md:w-1/2"
       >
         <h2 className="text-3xl mt-10 font-bold text-center mb-6 sm:text-4xl">
           Create Your Account
