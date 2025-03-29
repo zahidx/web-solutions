@@ -41,3 +41,32 @@ html, body {
 .glowing-border:hover {
   box-shadow: 0 0 5px rgba(121, 23, 1, 0.938), 0 0 10px rgba(190, 3, 94, 0.911), 0 0 10px rgba(170, 1, 1, 0.928);
 }
+
+
+/* Global Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Light gray background */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #4f46e5; /* Indigo-600 */
+  border-radius: 6px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+  transition: background-color 0.3s ease, width 0.3s ease;
+}
+
+/* Increase scrollbar width on hover */
+::-webkit-scrollbar:hover {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #4338ca; /* Indigo-700 */
+}
+

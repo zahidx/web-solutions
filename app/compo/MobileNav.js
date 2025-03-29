@@ -22,7 +22,7 @@ const darkIconColors = [
   "text-red-400",    // Contact
   "text-yellow-400", // Blog
   "text-teal-400",   // About Us
-  "text-orange-400", // Login (New Color)
+  "text-orange-400", // Login 
 ];
 
 const MobileNav = ({ setMenuOpen }) => {
@@ -46,7 +46,7 @@ const MobileNav = ({ setMenuOpen }) => {
       animate={{ x: 0 }}
       exit={{ x: "100%" }}
       transition={{ type: "spring", stiffness: 120, damping: 15 }}
-      className="fixed top-0 right-0 h-screen w-4/5 max-w-sm bg-white dark:bg-gray-900 
+      className="fixed top-0 right-0 h-screen w-4/5 max-w-sm bg-[#1C3D3D] dark:bg-gray-900 
                  text-black dark:text-white shadow-2xl border border-gray-300 dark:border-gray-700 
                  backdrop-blur-lg bg-opacity-90 dark:bg-opacity-80 
                  p-6 flex flex-col space-y-6 rounded-l-2xl"
@@ -70,11 +70,11 @@ const MobileNav = ({ setMenuOpen }) => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.05 * index, duration: 0.3 }}
             className="text-lg flex items-center gap-4 p-3 rounded-lg transition-all 
-                       hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-orange-400 border border-transparent 
+                       hover:bg-gray-900 dark:hover:bg-gray-700 text-gray-100 hover:text-orange-400 border border-transparent 
                        dark:border-gray-700 shadow-md dark:shadow-lg"
           >
             <Icon
-              size={22}
+              size={24}
               className={`${
                 darkIconColors[index] // Use the index to select the color
               } text-current`}
