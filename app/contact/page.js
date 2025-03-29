@@ -1,10 +1,12 @@
 "use client";
 import { useState } from 'react';
+import { toast} from 'react-hot-toast'; 
 import { HiMail, HiPhone, HiUser } from 'react-icons/hi';
 import ContactInfo from '../compo/ContactInfo';
 import CountryCodeSelect from '../compo/CountryCodeSelect';
-import QRCode from '../compo/QRCode'; // Import the QRCode component
-
+import QRCode from '../compo/QRCode';
+import { sendMessage } from '../Api/firebase';
+import CustomToaster from "../compo/CustomToaster";
 const InputField = ({ id, name, type, value, onChange, placeholder, Icon, prefix, ...rest }) => (
   <div className="relative">
     {Icon && (
@@ -39,12 +41,13 @@ export default function ContactPage() {
     countryCode: '+1',
   });
 
+  const [loading, setLoading] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  // Update country code and clear phone input when changing the code
   const handleCountryCodeChange = (code) => {
     setFormData((prev) => ({
       ...prev,
@@ -53,14 +56,27 @@ export default function ContactPage() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-    alert('Project details submitted!');
+    setLoading(true);
+
+    try {
+      await sendMessage(formData);
+      toast.success('Project details submitted successfully!');
+    } catch (error) {
+      console.error("Error sending message:", error);
+      toast.error('There was an error submitting your project details.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen px-6 py-12 bg-gray-100 dark:bg-gray-900 mt-20">
+      
+<CustomToaster />
+
+
       <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-black dark:text-white">
         Let&apos;s Craft Your <span className="text-red-500">Vision</span>
       </h2>
@@ -106,7 +122,6 @@ export default function ContactPage() {
               Icon={HiMail}
             />
 
-            {/* Country Code Selector */}
             <div>
               <CountryCodeSelect
                 value={formData.countryCode}
@@ -114,7 +129,6 @@ export default function ContactPage() {
               />
             </div>
 
-            {/* Phone Number Field */}
             <div>
               <InputField
                 id="phone"
@@ -144,14 +158,32 @@ export default function ContactPage() {
             <button
               type="submit"
               className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-all focus:outline-none"
+              disabled={loading}
             >
-              Send Project Details
+              {loading ? (
+                <div className="flex justify-center items-center">
+                  <svg
+                    className="animate-spin h-5 w-5 mr-3 text-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                    <path
+                      fill="currentColor"
+                      d="M4 12c0-4.418 3.582-8 8-8v2c-3.314 0-6 2.686-6 6s2.686 6 6 6v2c-4.418 0-8-3.582-8-8z"
+                    />
+                  </svg>
+                  Submitting...
+                </div>
+              ) : (
+                'Send Project Details'
+              )}
             </button>
           </div>
         </form>
       </div>
 
-      {/* Use the QRCode component here */}
       <QRCode />
     </div>
   );
