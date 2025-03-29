@@ -5,21 +5,21 @@ const QRCode = () => {
     {
       id: 1,
       platform: "WhatsApp",
-      message: "Scan to Contact on WhatsApp",
+      message: "Contact on WhatsApp",
       icon: <FaWhatsapp className="text-green-500 text-5xl glow-effect" />,
       qrCodeImage: "/qr-code.png", // Replace with your WhatsApp QR code image path
     },
     {
       id: 2,
       platform: "LinkedIn",
-      message: "Scan to Connect on LinkedIn",
+      message: "Connect on LinkedIn",
       icon: <FaLinkedin className="text-blue-700 text-5xl glow-effect" />,
       qrCodeImage: "/qr-code.png", // Replace with your LinkedIn QR code image path
     },
     {
       id: 3,
       platform: "Instagram",
-      message: "Scan to Follow on Instagram",
+      message: "Follow on Instagram",
       icon: <FaInstagram className="text-pink-600 text-5xl glow-effect" />,
       qrCodeImage: "/qr-code.png", // Replace with your Instagram QR code image path
     },
@@ -30,7 +30,7 @@ const QRCode = () => {
       {qrData.map(({ id, platform, message, icon, qrCodeImage }) => (
         <div
           key={id}
-          className={`flex flex-col items-center justify-center bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl ${id === 2 ? 'glowing-border' : ''}`}
+          className={`flex flex-col items-center justify-center bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl w-[320px] sm:w-3/4 md:w-1/2 mx-auto ${id === 2 ? 'glowing-border' : ''}`}
         >
           {/* Message Text */}
           <p className="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-white mb-6 text-center">

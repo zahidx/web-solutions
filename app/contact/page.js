@@ -61,7 +61,7 @@ export default function ContactPage() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen px-6 py-12 bg-gray-100 dark:bg-gray-900 mt-20">
-      <h2 className="text-5xl font-bold text-center text-black dark:text-white">
+      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-black dark:text-white">
         Let&apos;s Craft Your <span className="text-red-500">Vision</span>
       </h2>
       <p className="text-center text-xl text-gray-600 dark:text-gray-300 mb-8">
