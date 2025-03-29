@@ -26,11 +26,11 @@ const QRCode = () => {
   ];
 
   return (
-    <div className="mt-16 px-6 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+    <div className="container mx-auto py-12 px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       {qrData.map(({ id, platform, message, icon, qrCodeImage }) => (
         <div
           key={id}
-          className={`flex flex-col items-center justify-center bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl w-[320px] sm:w-3/4 md:w-1/2 mx-auto ${id === 2 ? 'glowing-border' : ''}`}
+          className={`w-full max-w-md flex flex-col items-center justify-center bg-white dark:bg-gray-800 p-4 md:p-8 rounded-2xl shadow-xl ${id === 2 ? 'glowing-border' : ''}`}
         >
           {/* Message Text */}
           <p className="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-white mb-6 text-center">
@@ -40,7 +40,7 @@ const QRCode = () => {
           {/* Icon Section with Glow Effect */}
           <div className="mb-6 relative">
             <div className="animate-ping absolute inset-0 z-0 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 opacity-30" />
-            <div className="relative z-10 transform transition-transform duration-300 ease-in-out">
+            <div className="relative z-10 transition-transform duration-300 ease-in-out">
               {icon}
             </div>
           </div>
