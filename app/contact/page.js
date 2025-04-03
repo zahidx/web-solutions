@@ -4,7 +4,6 @@ import { useState } from "react";
 import dynamic from "next/dynamic";
 import { HiMail, HiPhone, HiUser } from "react-icons/hi";
 import { FaSpinner } from "react-icons/fa";
-import { countryCodes } from "../compo/countryCodes"; // Ensure correct path
 import ContactInfo from "../compo/ContactInfo";
 import CountryCodeSelect from "../compo/CountryCodeSelect";
 import { sendMessage } from "../Api/firebase";
