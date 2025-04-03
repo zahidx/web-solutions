@@ -12,6 +12,7 @@ import {
   Smartphone,
   MoreHorizontal,
   Edit,
+  Layout,
   Workflow,
   Info,
   Phone,
@@ -114,7 +115,7 @@ const DesktopNav = ({
                 className="p-2 hover:bg-gray-900 dark:hover:bg-gray-700 rounded transition-all flex items-center"
                 href="/portfolio2"
               >
-                <Image size={16} className="mr-2 inline" />
+                <Layout size={16} className="mr-2 inline" />
                 UI/UX Projects
               </Link>
               <Link
