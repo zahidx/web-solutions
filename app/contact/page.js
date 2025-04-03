@@ -1,12 +1,19 @@
 "use client";
-import { useState } from 'react';
-import { toast} from 'react-hot-toast'; 
-import { HiMail, HiPhone, HiUser } from 'react-icons/hi';
-import ContactInfo from '../compo/ContactInfo';
-import CountryCodeSelect from '../compo/CountryCodeSelect';
-import QRCode from '../compo/QRCode';
-import { sendMessage } from '../Api/firebase';
+
+import { useState } from "react";
+import dynamic from "next/dynamic";
+import { HiMail, HiPhone, HiUser } from "react-icons/hi";
+import { FaSpinner } from "react-icons/fa";
+import { countryCodes } from "../compo/countryCodes"; // Ensure correct path
+import ContactInfo from "../compo/ContactInfo";
+import CountryCodeSelect from "../compo/CountryCodeSelect";
+import { sendMessage } from "../Api/firebase";
 import CustomToaster from "../compo/CustomToaster";
+import QRCode from "../compo/QRCode";
+import { toast } from "react-hot-toast";
+
+
+// InputField Component
 const InputField = ({ id, name, type, value, onChange, placeholder, Icon, prefix, ...rest }) => (
   <div className="relative">
     {Icon && (
@@ -31,29 +38,30 @@ const InputField = ({ id, name, type, value, onChange, placeholder, Icon, prefix
   </div>
 );
 
-export default function ContactPage() {
+const ContactPage = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    projectDetails: '',
-    countryCode: '+1',
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    projectDetails: "",
+    countryCode: "+1",
   });
 
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleCountryCodeChange = (code) => {
     setFormData((prev) => ({
       ...prev,
       countryCode: code,
-      phone: '',
+      phone: "",
     }));
+    toast.success(`Selected country code: ${code}`);
   };
 
   const handleSubmit = async (e) => {
@@ -62,10 +70,18 @@ export default function ContactPage() {
 
     try {
       await sendMessage(formData);
-      toast.success('Project details submitted successfully!');
+      toast.success("Project details submitted successfully!");
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        projectDetails: "",
+        countryCode: "+1",
+      });
     } catch (error) {
       console.error("Error sending message:", error);
-      toast.error('There was an error submitting your project details.');
+      toast.error("There was an error submitting your project details.");
     } finally {
       setLoading(false);
     }
@@ -73,9 +89,7 @@ export default function ContactPage() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen px-6 py-12 bg-gray-100 dark:bg-gray-900 mt-20">
-      
-<CustomToaster />
-
+      <CustomToaster />
 
       <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-black dark:text-white">
         Let&apos;s Craft Your <span className="text-red-500">Vision</span>
@@ -83,6 +97,7 @@ export default function ContactPage() {
       <p className="text-center text-xl text-gray-600 dark:text-gray-300 mb-8">
         Share your project ideas, and we&apos;ll transform them into reality.
       </p>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
         <ContactInfo />
 
@@ -162,29 +177,23 @@ export default function ContactPage() {
             >
               {loading ? (
                 <div className="flex justify-center items-center">
-                  <svg
-                    className="animate-spin h-5 w-5 mr-3 text-white"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                    <path
-                      fill="currentColor"
-                      d="M4 12c0-4.418 3.582-8 8-8v2c-3.314 0-6 2.686-6 6s2.686 6 6 6v2c-4.418 0-8-3.582-8-8z"
-                    />
-                  </svg>
+                  <FaSpinner className="animate-spin h-5 w-5 mr-3" />
                   Submitting...
                 </div>
               ) : (
-                'Send Project Details'
+                "Send Project Details"
               )}
             </button>
           </div>
         </form>
       </div>
 
-      <QRCode />
+      {/* Dynamically loaded QRCode component (client only) */}
+      <div className="mt-6">
+        <QRCode />
+      </div>
     </div>
   );
-}
+};
+
+export default dynamic(() => Promise.resolve(ContactPage), { ssr: false });

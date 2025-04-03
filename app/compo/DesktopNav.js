@@ -2,13 +2,13 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Home,
   Briefcase,
   Folder,
   ChevronDown,
   Monitor,
-  Image,
   Smartphone,
   MoreHorizontal,
   Edit,
@@ -103,7 +103,7 @@ const DesktopNav = ({
             >
               <Link
                 onClick={handlePortfolioDropdownToggle}
-                className="block p-2 hover:bg-gray-900 dark:hover:bg-gray-700 rounded transition-all flex items-center"
+                className="p-2 hover:bg-gray-900 dark:hover:bg-gray-700 rounded transition-all flex items-center"
                 href="/portfolio1"
               >
                 <Monitor size={16} className="mr-2 inline" />
@@ -111,7 +111,7 @@ const DesktopNav = ({
               </Link>
               <Link
                 onClick={handlePortfolioDropdownToggle}
-                className="block p-2 hover:bg-gray-900 dark:hover:bg-gray-700 rounded transition-all flex items-center"
+                className="p-2 hover:bg-gray-900 dark:hover:bg-gray-700 rounded transition-all flex items-center"
                 href="/portfolio2"
               >
                 <Image size={16} className="mr-2 inline" />
@@ -119,7 +119,7 @@ const DesktopNav = ({
               </Link>
               <Link
                 onClick={handlePortfolioDropdownToggle}
-                className="block p-2 hover:bg-gray-900 dark:hover:bg-gray-700 rounded transition-all flex items-center"
+                className="p-2 hover:bg-gray-900 dark:hover:bg-gray-700 rounded transition-all flex items-center"
                 href="/portfolio3"
               >
                 <Smartphone size={16} className="mr-2 inline" />
@@ -151,7 +151,7 @@ const DesktopNav = ({
             >
               <Link
                 onClick={handleMoreDropdownToggle}
-                className="block p-2 hover:bg-gray-900 dark:hover:bg-gray-700 rounded transition-all flex items-center"
+                className="p-2 hover:bg-gray-900 dark:hover:bg-gray-700 rounded transition-all flex items-center"
                 href="/blog"
               >
                 <Edit size={16} className="mr-2 inline" />
@@ -159,7 +159,7 @@ const DesktopNav = ({
               </Link>
               <Link
                 onClick={handleMoreDropdownToggle}
-                className="block p-2 hover:bg-gray-900 dark:hover:bg-gray-700 rounded transition-all flex items-center"
+                className="p-2 hover:bg-gray-900 dark:hover:bg-gray-700 rounded transition-all flex items-center"
                 href="/process"
               >
                 <Workflow size={16} className="mr-2 inline" />
@@ -167,7 +167,7 @@ const DesktopNav = ({
               </Link>
               <Link
                 onClick={handleMoreDropdownToggle}
-                className="block p-2 hover:bg-gray-900 dark:hover:bg-gray-700 rounded transition-all flex items-center"
+                className="p-2 hover:bg-gray-900 dark:hover:bg-gray-700 rounded transition-all flex items-center"
                 href="/about"
               >
                 <Info size={16} className="mr-2 inline" />
