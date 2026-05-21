@@ -7,6 +7,8 @@ import TestimonialsSection from "./TestimonialsSection";
 import CallToActionSection from "./CallToActionSection"; 
 import RecentProjects from "./RecentProjects";
 
+import FAQPage from "./compo/Faq";
+
 const HomePage = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -36,17 +38,12 @@ const HomePage = () => {
 
   return (
     <div className="transition-colors duration-500 dark:bg-gray-900 dark:text-gray-100 bg-gray-50 text-gray-900">
-      <button 
-        onClick={() => setDarkMode(!darkMode)} 
-        className="p-2 bg-gray-200 dark:bg-gray-800 rounded"
-      >
-        Toggle Dark Mode
-      </button>
       <HeroSection />
       <ServicesSection />
       <TestimonialsSection />
       <CallToActionSection />
       <RecentProjects />
+      <FAQPage />
       <Footer />
     </div>
   );

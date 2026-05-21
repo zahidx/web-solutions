@@ -10,7 +10,7 @@ const blogPosts = [
     title: "How to Optimize Your Site for Speed",
     category: "How-To",
     description: "Improve website performance with expert techniques.",
-    image: "/blog-speed.jpg",
+    image: "/b1.png",
     link: "/blog/optimize-site-speed",
   },
   {
@@ -18,7 +18,7 @@ const blogPosts = [
     title: "Best CMS for Startups in 2025",
     category: "How-To",
     description: "Explore the top CMS platforms for new businesses.",
-    image: "/blog-cms.jpg",
+    image: "/b2.png",
     link: "/blog/best-cms-for-startups",
   },
   {
@@ -26,7 +26,7 @@ const blogPosts = [
     title: "Case Study: SEO Boost for E-commerce",
     category: "Case Study",
     description: "How we increased traffic by 200% for an online store.",
-    image: "/blog-seo-case.jpg",
+    image: "/b3.png",
     link: "/blog/seo-case-study",
   },
   {
@@ -34,7 +34,7 @@ const blogPosts = [
     title: "Web Design Trends for 2025",
     category: "Industry Insights",
     description: "Discover cutting-edge design trends shaping the web.",
-    image: "/blog-trends.jpg",
+    image: "/b1.png",
     link: "/blog/web-design-trends-2025",
   },
 ];

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Star, CheckCircle, ArrowRight, ShoppingCart, Wrench } from "lucide-react";
+import { ArrowRight, CheckCircle, ShoppingCart, Star, Wrench } from "lucide-react";
 
 const ServicesSection = () => {
   // Common animation variant

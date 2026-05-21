@@ -40,12 +40,9 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all backdrop-blur-3xl ${
-        isScrolled ? "border-b-2 border-orange-500" : ""
-      } ${
-        // Dynamically set bg color based on the current theme
-        "bg-[#1C3D3D] dark:bg-transparent dark:bg-opacity-90"
-      }`}
+      className={`fixed top-0 left-0 w-full z-50 transition-all backdrop-blur-md ${ 
+        isScrolled ? "border-b border-gray-200 dark:border-gray-800 shadow-sm" : ""
+      } bg-white/70 dark:bg-gray-900/80`}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-4 flex justify-between items-center">
         {/* Logo + Text Link */}
@@ -56,7 +53,7 @@ const Navbar = () => {
         >
           <Link href="/" className="flex items-center gap-2">
             <Image src="/logo.png" alt="Logo" width={50} height={40} priority />
-            <span className="text-3xl font-semibold mt-2 -ml-3 text-gray-100 dark:text-white font-premium">
+            <span className="text-3xl font-semibold mt-2 -ml-3 text-gray-900 dark:text-white font-premium">
               webHub
             </span>
           </Link>

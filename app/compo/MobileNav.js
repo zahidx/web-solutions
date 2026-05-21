@@ -2,12 +2,13 @@
 
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { Home, Briefcase, Folder, Phone, Edit, Info, X, LogIn } from "lucide-react";
+import { Home, Briefcase, Folder, Phone, Edit, Info, X, LogIn, Sparkles } from "lucide-react";
 
 const navItems = [
   { href: "/", label: "Home", icon: Home },
   { href: "/services", label: "Services", icon: Briefcase },
   { href: "/portfolio", label: "Portfolio", icon: Folder },
+  { href: "/showcase", label: "Showcase", icon: Sparkles },
   { href: "/contact", label: "Contact", icon: Phone },
   { href: "/blog", label: "Blog", icon: Edit },
   { href: "/about", label: "About Us", icon: Info },
@@ -19,6 +20,7 @@ const darkIconColors = [
   "text-blue-400",   // Home
   "text-green-400",  // Services
   "text-purple-400", // Portfolio
+  "text-pink-400",   // Showcase
   "text-red-400",    // Contact
   "text-yellow-400", // Blog
   "text-teal-400",   // About Us

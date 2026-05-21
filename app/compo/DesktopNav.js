@@ -17,6 +17,7 @@ import {
   Info,
   Phone,
   LogIn,
+  Sparkles,
 } from "lucide-react";
 import { useState, useEffect } from "react";
 
@@ -26,20 +27,10 @@ const DesktopNav = ({
   moreDropdownOpen,
   handleMoreDropdownToggle,
 }) => {
-  const [navbarBgColor, setNavbarBgColor] = useState("");
   const [isClient, setIsClient] = useState(false); // Track if we are on the client side
 
-  // Dynamically set navbar background color based on content background
   useEffect(() => {
     setIsClient(true); // Update state when the component is mounted on the client side
-  }, []);
-
-  useEffect(() => {
-    const contentElement = document.querySelector("main"); // Assuming the content page has a <main> tag
-    if (contentElement) {
-      const contentBgColor = window.getComputedStyle(contentElement).backgroundColor;
-      setNavbarBgColor(contentBgColor); // Update navbar background color dynamically
-    }
   }, []);
 
   // Close dropdowns when the route changes (only client-side)
@@ -64,30 +55,34 @@ const DesktopNav = ({
   }, [isClient, portfolioDropdownOpen, moreDropdownOpen, handlePortfolioDropdownToggle, handleMoreDropdownToggle]);
 
   return (
-    <div
-      className="hidden md:flex space-x-8 items-center text-lg mt-3"
-      style={{ backgroundColor: navbarBgColor }} // Apply dynamic background color
-    >
+    <div className="hidden md:flex space-x-8 items-center text-lg mt-3">
       <Link
-        className="hover:text-orange-400 transition-all duration-300 text-gray-100 dark:text-gray-100 flex items-center"
+        className="hover:text-orange-400 transition-all duration-300 text-gray-900 dark:text-gray-100 flex items-center"
         href="/"
       >
         <Home size={16} className="mr-2 inline" />
         Home
       </Link>
       <Link
-        className="hover:text-orange-400 transition-all duration-300 text-gray-100 dark:text-gray-100 flex items-center"
+        className="hover:text-orange-400 transition-all duration-300 text-gray-900 dark:text-gray-100 flex items-center"
         href="/services"
       >
         <Briefcase size={16} className="mr-2 inline" />
         Services
+      </Link>
+      <Link
+        className="hover:text-orange-400 transition-all duration-300 text-gray-900 dark:text-gray-100 flex items-center"
+        href="/showcase"
+      >
+        <Sparkles size={16} className="mr-2 inline" />
+        Showcase
       </Link>
 
       {/* Portfolio Dropdown */}
       <div className="relative group">
         <button
           onClick={handlePortfolioDropdownToggle}
-          className="flex items-center space-x-1 hover:text-orange-400 transition-all duration-300 text-gray-100 dark:text-gray-100"
+          className="flex items-center space-x-1 hover:text-orange-400 transition-all duration-300 text-gray-900 dark:text-gray-100"
         >
           <Folder size={16} className="mr-2 inline" />
           <span>Portfolio</span>
@@ -100,7 +95,7 @@ const DesktopNav = ({
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="absolute left-0 mt-2 w-64 bg-[#1C3D3D] dark:bg-gray-800 shadow-lg rounded-lg p-4 z-10 text-gray-100 dark:text-gray-100"
+              className="absolute left-0 mt-2 w-64 bg-[#1C3D3D] dark:bg-gray-800 shadow-lg rounded-lg p-4 z-10 text-gray-900 dark:text-gray-100"
             >
               <Link
                 onClick={handlePortfolioDropdownToggle}
@@ -135,7 +130,7 @@ const DesktopNav = ({
       <div className="relative group">
         <button
           onClick={handleMoreDropdownToggle}
-          className="flex items-center space-x-1 hover:text-orange-400 transition-all duration-300 text-gray-100 dark:text-gray-100"
+          className="flex items-center space-x-1 hover:text-orange-400 transition-all duration-300 text-gray-900 dark:text-gray-100"
         >
           <MoreHorizontal size={16} className="mr-2 inline" />
           <span>More</span>
@@ -148,7 +143,7 @@ const DesktopNav = ({
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="absolute left-0 mt-2 w-64 bg-[#1C3D3D] dark:bg-gray-800 shadow-lg rounded-lg p-4 z-10 text-gray-100 dark:text-gray-100"
+              className="absolute left-0 mt-2 w-64 bg-[#1C3D3D] dark:bg-gray-800 shadow-lg rounded-lg p-4 z-10 text-gray-900 dark:text-gray-100"
             >
               <Link
                 onClick={handleMoreDropdownToggle}
@@ -174,13 +169,21 @@ const DesktopNav = ({
                 <Info size={16} className="mr-2 inline" />
                 About Us
               </Link>
+              <Link
+                onClick={handleMoreDropdownToggle}
+                className="p-2 hover:bg-gray-900 dark:hover:bg-gray-700 rounded transition-all flex items-center"
+                href="/faq"
+              >
+                <Info size={16} className="mr-2 inline" />
+                FAQ
+              </Link>
             </motion.div>
           )}
         </AnimatePresence>
       </div>
 
       <Link
-        className="hover:text-orange-400 transition-all duration-300 text-gray-100 dark:text-gray-100 flex items-center"
+        className="hover:text-orange-400 transition-all duration-300 text-gray-900 dark:text-gray-100 flex items-center"
         href="/contact"
       >
         <Phone size={16} className="mr-2 inline" />

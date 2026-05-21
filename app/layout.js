@@ -1,7 +1,9 @@
 // app/layout.js (or app/rootLayout.js if you're using the app directory)
 import { Geist, Geist_Mono } from "next/font/google";
+import CustomCursor from "./compo/CustomCursor";
+import Navbar from "./compo/Navbar"; // Ensure the path is correct
+import AutoPilot from "./compo/AutoPilot"; // Add the AutoPilot component
 import "./globals.css";
-import Navbar from "./compo/Navbar";  // Ensure the path is correct
 
 // Load the fonts from Google Fonts
 const geistSans = Geist({
@@ -29,8 +31,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}  // Apply fonts to the body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}  // Apply fonts to the body
       >
+        <svg className="fixed inset-0 w-full h-full pointer-events-none z-0 opacity-40 dark:opacity-20 mix-blend-overlay">
+          <filter id="noiseFilter">
+            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+          </filter>
+          <rect width="100%" height="100%" filter="url(#noiseFilter)"/>
+        </svg>
+        <CustomCursor />
+        <AutoPilot /> {/* Floating auto pilot button */}
         <Navbar />  {/* Navbar component */}
         {children}  {/* Render the content passed to the layout */}
       </body>
