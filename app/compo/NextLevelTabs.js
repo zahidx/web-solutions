@@ -15,7 +15,7 @@ const tabs = [
           Pushing Boundaries
         </h3>
         <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-          We leverage bleeding-edge web technologies to build interfaces that don't just work, but feel alive. Our innovation-first approach ensures your digital presence stands out.
+          We leverage bleeding-edge web technologies to build interfaces that don&apos;t just work, but feel alive. Our innovation-first approach ensures your digital presence stands out.
         </p>
         <div className="grid grid-cols-2 gap-4 mt-6">
           <div className="p-4 bg-orange-100 dark:bg-orange-900/30 rounded-xl border border-orange-200 dark:border-orange-800">

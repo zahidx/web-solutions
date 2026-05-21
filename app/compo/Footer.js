@@ -76,7 +76,7 @@ const Footer = () => {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-3xl lg:text-4xl font-bold tracking-tight mb-3">
-                Let's build something <br/>
+                Let&apos;s build something <br/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">extraordinary.</span>
               </h2>
               <p className="text-sm text-gray-400 max-w-sm mb-6 leading-relaxed">
