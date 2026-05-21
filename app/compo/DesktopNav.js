@@ -192,11 +192,14 @@ const DesktopNav = ({
 
       {/* Login Button */}
       <Link
-        className="ml-4 px-4 py-2 border border-orange-400 text-orange-400 rounded-lg hover:bg-orange-400 hover:text-white transition-all duration-300 flex items-center"
+        className="ml-4 group relative inline-flex items-center justify-center px-5 py-2 text-sm bg-gray-900 dark:bg-white text-white dark:text-black font-medium rounded-full overflow-hidden transition-transform duration-300 hover:scale-105 shadow-sm"
         href="/login"
       >
-        <LogIn size={16} className="mr-2 inline" />
-        Login
+        <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-orange-400 to-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out" />
+        <span className="relative z-10 flex items-center gap-2 group-hover:text-white transition-colors duration-300">
+          <LogIn size={16} />
+          Login
+        </span>
       </Link>
     </div>
   );

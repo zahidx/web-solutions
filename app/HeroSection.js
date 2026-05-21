@@ -19,7 +19,7 @@ const HeroSection = () => {
           transition={{ duration: 1.2 }}
         >
           Build Your Dream Website with{" "}
-          <span className="text-[#E69A10]">ZahidWebSolution</span>
+          <span className="text-[#E69A10]">xweb</span>
         </motion.h1>
         <motion.p
           className="text-base sm:text-lg md:text-xl mb-8 leading-relaxed opacity-80"

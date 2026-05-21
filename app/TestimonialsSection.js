@@ -11,7 +11,7 @@ import Image from "next/image";
 const testimonials = [
   {
     id: 1,
-    quote: '"ZahidWebSolution transformed our business with an incredible website!"',
+    quote: '"xweb transformed our business with an incredible website!"',
     author: "John Doe, CEO",
     image: "/profile.png",
     metrics: "35% increase in traffic",
@@ -25,7 +25,7 @@ const testimonials = [
   },
   {
     id: 3,
-    quote: '"Our engagement skyrocketed, thanks to ZahidWebSolution!"',
+    quote: '"Our engagement skyrocketed, thanks to xweb!"',
     author: "Alice Johnson, Marketing Director",
     image: "/profile.png",
     metrics: "60% increase in engagement",
@@ -46,7 +46,7 @@ const testimonials = [
   },
   {
     id: 6,
-    quote: '"Working with ZahidWebSolution was a game-changer!"',
+    quote: '"Working with xweb was a game-changer!"',
     author: "Robert Wilson, Entrepreneur",
     image: "/profile.png",
     metrics: "45% increase in overall engagement",

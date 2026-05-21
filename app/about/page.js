@@ -144,6 +144,57 @@ export default function About() {
           </div>
         </section>
         
+        {/* Team Section */}
+        <section className="text-center mb-8">
+          <div className="inline-block mb-12">
+            <h3 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500 mb-2">
+              Meet Our Team
+            </h3>
+            <div className="h-1 w-20 bg-orange-500 mx-auto rounded-full"></div>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { name: "Zahidul Islam", role: "Founder & Lead Developer", img: "/profile.png" },
+              { name: "Saniul Islam Sani", role: "Senior Developer", img: "/profile.png" },
+              { name: "Omar bin Sarower", role: "UI/UX Designer", img: "/profile.png" },
+              { name: "Ashad Nur", role: "Project Manager", img: "/profile.png" }
+            ].map((member, index) => (
+              <div 
+                key={index}
+                className="group relative bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2"
+              >
+                {/* Background Hover Effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                
+                <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden mb-6 border-4 border-gray-100 dark:border-gray-700 group-hover:border-orange-400 transition-colors duration-500 shadow-inner">
+                  <Image
+                    src={member.img}
+                    alt={member.name}
+                    layout="fill"
+                    objectFit="cover"
+                    className="transform group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                
+                <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-1 relative z-10 transition-colors group-hover:text-orange-500">
+                  {member.name}
+                </h4>
+                <p className="text-sm text-gray-500 dark:text-gray-400 font-medium relative z-10">
+                  {member.role}
+                </p>
+                
+                {/* Decorative dots */}
+                <div className="flex justify-center gap-1 mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                  <div className="w-1.5 h-1.5 rounded-full bg-orange-400"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-red-400"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-yellow-400"></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+        
       </div>
     </div>
   );
